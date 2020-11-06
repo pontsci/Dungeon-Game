@@ -32,4 +32,22 @@ public class ChangeMaterialOnEnterInteract : MonoBehaviour
     {
         rend.material = interactiveMaterial;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "InteractSphere")
+        {
+            Debug.Log("Detected Interactable Sphere!");
+            ChangeToInteractiveMaterial();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "InteractSphere")
+        {
+            Debug.Log("Detected Leaving Interactable Sphere!");
+            ChangeToDefaultMaterial();
+        }
+    }
 }
