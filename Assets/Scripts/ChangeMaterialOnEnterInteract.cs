@@ -17,18 +17,12 @@ public class ChangeMaterialOnEnterInteract : MonoBehaviour
         rend = gameObject.GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void ChangeToDefaultMaterial()
+    void ChangeToDefaultMaterial()
     {
         rend.material = defaultMaterial;
     }
 
-    public void ChangeToInteractiveMaterial()
+    void ChangeToInteractiveMaterial()
     {
         rend.material = interactiveMaterial;
     }
