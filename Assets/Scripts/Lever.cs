@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     public GameObject door;
-    public Door doorScript;
+    private Door doorScript;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +23,12 @@ public class Lever : MonoBehaviour
                     doorScript.doorMoving = true;
                     if (doorScript.doorClosed)
                     {
-                        Debug.Log("Open the door!");
+                        Debug.Log("Lever says: Open the door!");
                         doorScript.OpenDoor();
                     }
                     else
                     {
-                        Debug.Log("Close the door!");
+                        Debug.Log("Lever says: Close the door!");
                         doorScript.CloseDoor();
                     }
                 }
