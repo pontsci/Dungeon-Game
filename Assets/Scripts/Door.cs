@@ -22,14 +22,31 @@ public class Door : MonoBehaviour
 
     public void CloseDoor()
     {
-        
+        Debug.Log("Door says: Closing the door.");
         doorClosed = true;
-        doorMoving = false;
+        Invoke("PlayCloseDoorAnimation", 5f);
     }
 
     public void OpenDoor()
     {
+        Debug.Log("Door says: Opening the door.");
         doorClosed = false;
+        Invoke("PlayOpenDoorAnimation", 5f);
+    }
+
+    private void PlayOpenDoorAnimation()
+    {
+
+
+
+        doorMoving = false;
+    }
+
+    private void PlayClosingDoorAnimation()
+    {
+
+
+
         doorMoving = false;
     }
 

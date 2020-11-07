@@ -681,7 +681,7 @@ PlayerSettings:
   projectName: Group_6_Game_Project
   organizationId: pontsci
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 0
+  enableNativePlatformBackendsForNewInputSystem: 1
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
