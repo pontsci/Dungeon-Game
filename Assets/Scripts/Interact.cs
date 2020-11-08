@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Interact : MonoBehaviour
 {
-
+    public UnityEvent OnDoInteract = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,14 @@ public class Interact : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("F Pressed!");
+        }
     }
 
 
