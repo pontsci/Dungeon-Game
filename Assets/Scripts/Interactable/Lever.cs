@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever : MonoBehaviour
+public class Lever : Interactable
 {
     public GameObject door;
     private Door doorScript;
-    private bool inInteractSphere = false;
 
     // Start is called before the first frame update
     void Start()
@@ -14,25 +13,9 @@ public class Lever : MonoBehaviour
         doorScript = door.GetComponent<Door>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "InteractSphere")
-        {
-            Debug.Log("In Range!");
-            inInteractSphere = true;
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "InteractSphere")
-        {
-            Debug.Log("Out of Range!");
-            inInteractSphere = false;
-        }
-    }
 
-    public void ActivateLever()
+    public override void Activate()
     {
         if (inInteractSphere)
         {

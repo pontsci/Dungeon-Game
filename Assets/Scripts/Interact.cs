@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class Interact : MonoBehaviour
 {
-    public UnityEvent OnDoInteract = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
