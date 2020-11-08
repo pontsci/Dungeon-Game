@@ -13,8 +13,6 @@ public class Lever : Interactable
         doorScript = door.GetComponent<Door>();
     }
 
-
-
     public override void Activate()
     {
         if (inInteractSphere)

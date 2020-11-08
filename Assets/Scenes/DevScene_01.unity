@@ -266,21 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b0e58eb5aede748920d34da1119f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDoInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 721167406}
-        m_TargetAssemblyTypeName: Lever, Assembly-CSharp
-        m_MethodName: ActivateLever
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &721167400
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 788001019}
   - component: {fileID: 788001020}
+  - component: {fileID: 788001021}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -449,6 +435,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffea319fe6872ec4080b2507e41ee751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotatePositive: 0
+--- !u!95 &788001021
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788001018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2fec6a7bdeb6df4f90ce4ba97c39801, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &923038577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -555,9 +561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b0e58eb5aede748920d34da1119f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDoInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1235847068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +590,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 721167406}
         m_TargetAssemblyTypeName: Lever, Assembly-CSharp
-        m_MethodName: ActivateLever
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
