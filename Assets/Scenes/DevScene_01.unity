@@ -522,6 +522,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4164976301664394789, guid: 525a26293b6b60647b8750f2aa4027d4, type: 3}
+      propertyPath: defaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b454419b64bca2f4ba08ccb501e2d5ca, type: 2}
+    - target: {fileID: 4164976301664394789, guid: 525a26293b6b60647b8750f2aa4027d4, type: 3}
+      propertyPath: interactiveMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 40cc088edeaa81f4086a53dfe2a37d39, type: 2}
     - target: {fileID: 4164976303245187389, guid: 525a26293b6b60647b8750f2aa4027d4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.37939
@@ -570,5 +578,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorAndLever
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4164976301664394790, guid: 525a26293b6b60647b8750f2aa4027d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 525a26293b6b60647b8750f2aa4027d4, type: 3}
