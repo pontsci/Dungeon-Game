@@ -10,8 +10,8 @@ public class Pickup : Interactable
         if (inInteractSphere)
         {
             PickupAction();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     private void PickupAction()
