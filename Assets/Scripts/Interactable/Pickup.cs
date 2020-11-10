@@ -5,28 +5,23 @@ using UnityEngine;
 
 public class Pickup : Interactable
 {
-
-
     public override void Activate()
     {
-        PickupAction();
+        if (inInteractSphere)
+        {
+            PickupAction();
+        }
         Destroy(gameObject);
     }
 
     private void PickupAction()
     {
-        throw new NotImplementedException();
+        Debug.Log("Picking Up!");
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.Start();
     }
 }
