@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class Interactable : MonoBehaviour
 {
@@ -56,5 +57,5 @@ public abstract class Interactable : MonoBehaviour
     }
 
     //a method invoked by the unity input manager on "F" key
-    public abstract void Activate();
+    public abstract void Activate(InputAction.CallbackContext context);
 }

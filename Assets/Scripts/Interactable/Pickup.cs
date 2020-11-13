@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Pickup : Interactable
 {
-    public override void Activate()
+    public override void Activate(InputAction.CallbackContext context)
     {
-        if (inInteractSphere)
+        if (inInteractSphere && context.performed)
         {
             PickupAction();
             Destroy(gameObject);
