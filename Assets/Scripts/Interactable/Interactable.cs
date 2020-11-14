@@ -26,7 +26,7 @@ public abstract class Interactable : MonoBehaviour
         {
             //Debug.Log("In Range!");
             //change material
-            ChangeToInteractiveMaterial();
+            //ChangeToInteractiveMaterial();
             inInteractSphere = true;
         }
 
@@ -39,7 +39,7 @@ public abstract class Interactable : MonoBehaviour
         {
             //Debug.Log("Out of Range!");
             //change material
-            ChangeToDefaultMaterial();
+            //ChangeToDefaultMaterial();
             inInteractSphere = false;
         }
     }

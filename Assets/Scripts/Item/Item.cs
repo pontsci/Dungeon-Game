@@ -12,7 +12,7 @@ public class Item : Pickup
         base.Start();
     }
 
-    protected override void PickupAction()
+    public override void PickupAction()
     {
         //do the parent PickupAction
         base.PickupAction();

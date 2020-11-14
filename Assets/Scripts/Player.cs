@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
         if (item)
         {
             inventory.AddItem(item.item, 1);
-            Destroy(other.gameObject);
+            item.PickupAction();
+            //Destroy(other.gameObject);
         }
     }
 

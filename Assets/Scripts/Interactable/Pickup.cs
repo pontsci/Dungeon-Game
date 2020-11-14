@@ -15,9 +15,10 @@ public class Pickup : Interactable
         }
     }
 
-    protected virtual void PickupAction()
+    public virtual void PickupAction()
     {
         Debug.Log("Picking Up!");
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update
