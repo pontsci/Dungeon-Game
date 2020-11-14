@@ -15,7 +15,7 @@ public class Pickup : Interactable
         }
     }
 
-    private void PickupAction()
+    protected virtual void PickupAction()
     {
         Debug.Log("Picking Up!");
     }
