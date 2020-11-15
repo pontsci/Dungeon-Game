@@ -18,13 +18,13 @@ public class Interact : MonoBehaviour
         
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
+ /*   public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             Debug.Log("F Pressed!");
         }
-    }
+    }*/
 
 
 }

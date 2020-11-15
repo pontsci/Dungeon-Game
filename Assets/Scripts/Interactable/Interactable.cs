@@ -24,7 +24,7 @@ public abstract class Interactable : MonoBehaviour
         //entering the sphere, we set to true that we are in
         if (other.tag == "Player")
         {
-            //Debug.Log("In Range!");
+            Debug.Log("In Range!");
             //change material
             //ChangeToInteractiveMaterial();
             inInteractSphere = true;
@@ -37,7 +37,7 @@ public abstract class Interactable : MonoBehaviour
         //exiting the sphere, we set to false that we are in
         if (other.tag == "Player")
         {
-            //Debug.Log("Out of Range!");
+            Debug.Log("Out of Range!");
             //change material
             //ChangeToDefaultMaterial();
             inInteractSphere = false;
