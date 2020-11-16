@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f3b64af5570e842b2741cf0bed50f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactiveMaterial: {fileID: 0}
-  defaultMaterial: {fileID: 0}
+  interactiveMaterial: {fileID: 2100000, guid: 40cc088edeaa81f4086a53dfe2a37d39, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: b454419b64bca2f4ba08ccb501e2d5ca, type: 2}
   door: {fileID: 8035608867483278043}
 --- !u!1 &8035608867483278043
 GameObject:
