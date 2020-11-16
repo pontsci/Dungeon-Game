@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Lever : Interactable
 {
@@ -14,9 +15,9 @@ public class Lever : Interactable
         doorScript = door.GetComponent<Door>();
     }
 
-    public override void Activate()
+    public override void Activate(InputAction.CallbackContext context)
     {
-        if (inInteractSphere)
+        if (inInteractSphere && context.performed)
         {
             if (!doorScript.doorMoving)
             {

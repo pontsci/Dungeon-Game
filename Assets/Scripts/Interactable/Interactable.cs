@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class Interactable : MonoBehaviour
 {
     //whether we're in the sphere or not
     protected bool inInteractSphere = false;
+
+    protected Player playerScript;
 
     public Material interactiveMaterial;
     public Material defaultMaterial;
@@ -16,16 +19,17 @@ public abstract class Interactable : MonoBehaviour
     {
         //the renderer
         rend = gameObject.GetComponent<Renderer>();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //entering the sphere, we set to true that we are in
-        if (other.tag == "InteractSphere")
+        if (other.tag == "Player")
         {
             //Debug.Log("In Range!");
             //change material
-            ChangeToInteractiveMaterial();
+            //ChangeToInteractiveMaterial();
             inInteractSphere = true;
         }
 
@@ -34,11 +38,11 @@ public abstract class Interactable : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //exiting the sphere, we set to false that we are in
-        if (other.tag == "InteractSphere")
+        if (other.tag == "Player")
         {
             //Debug.Log("Out of Range!");
             //change material
-            ChangeToDefaultMaterial();
+            //ChangeToDefaultMaterial();
             inInteractSphere = false;
         }
     }
@@ -56,5 +60,5 @@ public abstract class Interactable : MonoBehaviour
     }
 
     //a method invoked by the unity input manager on "F" key
-    public abstract void Activate();
+    public abstract void Activate(InputAction.CallbackContext context);
 }

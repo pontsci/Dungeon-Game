@@ -8,7 +8,15 @@
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "f51a2d04-ecd6-4a43-8608-791dc0147866",
+                    "id": "60f8c2ca-f33a-4d75-b199-e03222da213d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Open Inventory",
+                    "type": "Button",
+                    "id": "713fde8d-e0ff-440b-9dc5-90457cfa80f2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -17,12 +25,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "ce114eab-bb31-41a6-9dbe-83a2431024e6",
+                    "id": "7141bcfe-05d2-4f48-952d-075cb64a2f4f",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5f824af-f302-41bc-995f-a5e12ee28210",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

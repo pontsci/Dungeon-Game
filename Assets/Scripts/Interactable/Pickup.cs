@@ -2,21 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Pickup : Interactable
 {
-    public override void Activate()
+    //activated when player is in range and presses F
+    public override void Activate(InputAction.CallbackContext context)
     {
-        if (inInteractSphere)
+        if (inInteractSphere && context.performed)
         {
+            //do the pickup action
             PickupAction();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
-    private void PickupAction()
+    //a generic pickup action, overrite in child
+    public virtual void PickupAction()
     {
         Debug.Log("Picking Up!");
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update
