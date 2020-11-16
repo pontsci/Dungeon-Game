@@ -5,6 +5,7 @@ using UnityEngine;
 public enum ItemType
 {
     Food,
+    BadFood,
     Equipment,
     Gold,
     Potion,

@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b265b36e4e8be0e4386f30c4599e4778, type: 3}
-  m_Name: Cheese Wedge
+  m_Script: {fileID: 11500000, guid: a26bced64a458f249b083e0fa400c4ad, type: 3}
+  m_Name: BananaBad
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8487265138831769418, guid: a3327e9529c154146b94509e039d12c4, type: 3}
-  type: 0
-  description: A delicious, large wedge of cheese.
-  restoreHungerValue: 50
+  prefab: {fileID: 9159439902938027026, guid: 2f463eaf020c6614eb9d0e62cd43cb5c, type: 3}
+  type: 1
+  description: An old, heavily bruised banana.
+  restoreHungerValue: 30
+  poisonChance: 0.2

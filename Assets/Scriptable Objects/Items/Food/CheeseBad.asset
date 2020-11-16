@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b265b36e4e8be0e4386f30c4599e4778, type: 3}
-  m_Name: Cheese Wedge
+  m_Script: {fileID: 11500000, guid: a26bced64a458f249b083e0fa400c4ad, type: 3}
+  m_Name: CheeseBad
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8487265138831769418, guid: a3327e9529c154146b94509e039d12c4, type: 3}
-  type: 0
-  description: A delicious, large wedge of cheese.
+  prefab: {fileID: 8633005319074277175, guid: 4afe0a5c0c519ea478f2062329361409, type: 3}
+  type: 1
+  description: A moldy, green wedge of cheese.
   restoreHungerValue: 50
+  poisonChance: 0.2
