@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
     public List<GameObject> interactableGameObjectsInRange = new List<GameObject>();
+    public int health = 100;
+    public int food = 100;
+    public int MAXHEALTH = 100;
+    public int MAXFOOD = 100;
 
     private void OnTriggerEnter(Collider other)
     {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8765378845171046586}
   - component: {fileID: 8765378845172941978}
   - component: {fileID: 8765378845177285340}
+  - component: {fileID: 3950359870908619357}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -92,6 +93,19 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8765378845172554392}
   m_Enabled: 1
+--- !u!114 &3950359870908619357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765378845172554392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f92444fd4ea70854c941d17a6b2232b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_HEALTH: 100
 --- !u!1 &8765378845172554394
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +123,7 @@ GameObject:
   - component: {fileID: 8765378843893299239}
   - component: {fileID: 8765378845172554399}
   - component: {fileID: 8765378845172554393}
+  - component: {fileID: 8126176464478640773}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -461,6 +476,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 2fed6061166061f4781edbc8d1adc3e2, type: 2}
   interactableGameObjectsInRange: []
+  health: 100
+  food: 100
+  MAXHEALTH: 100
+  MAXFOOD: 100
 --- !u!135 &8765378845172554393
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -474,3 +493,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8126176464478640773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765378845172554394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f92444fd4ea70854c941d17a6b2232b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_HEALTH: 100
