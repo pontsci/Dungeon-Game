@@ -25,7 +25,7 @@ public abstract class Interactable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //entering the sphere, we set to true that we are in
-        if (other.tag == "Player")
+        if (other.tag == "InteractSphere")
         {
             //Debug.Log("In Range!");
             //change material
@@ -38,7 +38,7 @@ public abstract class Interactable : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //exiting the sphere, we set to false that we are in
-        if (other.tag == "Player")
+        if (other.tag == "InteractSphere")
         {
             //Debug.Log("Out of Range!");
             //change material

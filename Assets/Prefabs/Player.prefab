@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4253678111762220604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588250960357227264}
+  - component: {fileID: 6335489522909863207}
+  - component: {fileID: 1251544144669516445}
+  m_Layer: 0
+  m_Name: InteractSphere
+  m_TagString: InteractSphere
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1588250960357227264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253678111762220604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8765378845172582074}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6335489522909863207
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253678111762220604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1251544144669516445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253678111762220604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de044e0935297004aaab99a4eab52d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableGameObjectsInRange: []
 --- !u!1 &8765378845172554392
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,10 +177,8 @@ GameObject:
   - component: {fileID: 8765378845178572666}
   - component: {fileID: 8765378845175462394}
   - component: {fileID: 8765378845173302138}
-  - component: {fileID: 8765378843893299232}
   - component: {fileID: 8765378843893299239}
   - component: {fileID: 8765378845172554399}
-  - component: {fileID: 8765378845172554393}
   - component: {fileID: 8126176464478640773}
   m_Layer: 0
   m_Name: Player
@@ -143,6 +199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8765378845172582072}
+  - {fileID: 1588250960357227264}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -400,18 +457,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &8765378843893299232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8765378845172554394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b0e58eb5aede748920d34da1119f6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8765378843893299239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,23 +521,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 2fed6061166061f4781edbc8d1adc3e2, type: 2}
   interactableGameObjectsInRange: []
+  interactSphereScript: {fileID: 1251544144669516445}
   health: 100
   food: 100
   MAXHEALTH: 100
   MAXFOOD: 100
---- !u!135 &8765378845172554393
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8765378845172554394}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8126176464478640773
 MonoBehaviour:
   m_ObjectHideFlags: 0
