@@ -31,8 +31,14 @@ public class Health : MonoBehaviour
     public void RemoveHealth(int health_value) {
         health = health - health_value;
         if (health <= 0) {
-            //kill thing: NOT IMPLEMENTED YET
+            health = 0;
             isDead = true; //may not be needed
+            //go back to menu?
+            //Destroy(gameObject);
         }
+    }
+
+    public int getHealth() {
+        return health;
     }
 }
