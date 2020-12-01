@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractSphere
   - Interactable
+  - Skeleton
   layers:
   - Default
   - TransparentFX
