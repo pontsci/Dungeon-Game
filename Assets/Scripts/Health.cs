@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
             health = 0;
             isDead = true; //may not be needed
             //go back to menu?
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
