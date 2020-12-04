@@ -16,8 +16,7 @@ public class Stake : MonoBehaviour
             Debug.Log("Health before: " + playerHealthScript.getHealth());
             playerHealthScript.RemoveHealth(stakeData.removeHealthValue);
             Debug.Log("Health after: " + playerHealthScript.getHealth());
-            Destroy(playerHealthScript.gameObject);
-        }
+          }
     }
 
     private void Update()
