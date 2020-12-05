@@ -13,10 +13,10 @@ public class InteractSphere : MonoBehaviour
         var interactable = other.GetComponent<Interactable>();
         if (interactable)
         {
-            Debug.Log("This object: " + gameObject + " found an interactable! -> " + interactable);
-            Debug.Log("Adding it to our in range interactables!");
+            //Debug.Log("This object: " + gameObject + " found an interactable! -> " + interactable);
+            //Debug.Log("Adding it to our in range interactables!");
             AddInteractableFromInteractableGameObjectsInRange(other.gameObject);
-            Debug.Log("Our interactables size so far: " + interactableGameObjectsInRange.Count);
+            //Debug.Log("Our interactables size so far: " + interactableGameObjectsInRange.Count);
         }
     }
 
@@ -25,10 +25,10 @@ public class InteractSphere : MonoBehaviour
         var interactable = other.GetComponent<Interactable>();
         if (interactable)
         {
-            Debug.Log("This object: " + gameObject + " found an interactable! -> " + interactable);
-            Debug.Log("Adding it to our in range interactables!");
+            //Debug.Log("This object: " + gameObject + " found an interactable! -> " + interactable);
+            //Debug.Log("Adding it to our in range interactables!");
             RemoveInteractableFromInteractableGameObjectsInRange(other.gameObject);
-            Debug.Log("Our interactables size so far: " + interactableGameObjectsInRange.Count);
+            //Debug.Log("Our interactables size so far: " + interactableGameObjectsInRange.Count);
         }
     }
 
