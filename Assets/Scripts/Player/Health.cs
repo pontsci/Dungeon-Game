@@ -8,10 +8,13 @@ public class Health : MonoBehaviour
     private int health;
     private bool isDead = false;
 
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         health = MAX_HEALTH;
+        healthBar.SetMaxHealth(MAX_HEALTH);
     }
 
     // Update is called once per frame
@@ -26,15 +29,22 @@ public class Health : MonoBehaviour
         if (health > MAX_HEALTH) {
             health = MAX_HEALTH;
         }
+        healthBar.SetHealth(health);
     }
 
     public void RemoveHealth(int health_value) {
         health = health - health_value;
-        if (health <= 0) {
+        if (health <= 0)
+        {
             health = 0;
             isDead = true; //may not be needed
             //go back to menu?
+            healthBar.SetHealth(health);
             Destroy(gameObject);
+        }
+        else
+        {
+            healthBar.SetHealth(health);
         }
     }
 
