@@ -8,10 +8,6 @@ public class Player : MonoBehaviour
     public InventoryObject inventory;
     public List<GameObject> interactableGameObjectsInRange;
     public InteractSphere interactSphereScript;
-    public int health = 100;
-    public int food = 100;
-    public int MAXHEALTH = 100;
-    public int MAXFOOD = 100;
 
     private void Start()
     {
