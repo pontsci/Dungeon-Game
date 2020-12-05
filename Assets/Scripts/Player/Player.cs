@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     {
         if (context.performed)
         {
+            Debug.Log("Saving!");
             inventory.Save();
         }
     }
@@ -46,7 +47,8 @@ public class Player : MonoBehaviour
     {
         if (context.performed)
         {
-            inventory.Save();
+            Debug.Log("Loading!");
+            inventory.Load();
         }
     }
 
@@ -62,6 +64,6 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        //inventory.Container.Clear();
+        inventory.Container.Clear();
     }
 }
