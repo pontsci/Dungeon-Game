@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDatabaseObject : MonoBehaviour
+[CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Items/Database")]
+public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiver
 {
-    // Start is called before the first frame update
-    void Start()
+    public ItemObject[] Items;
+    public Dictionary<ItemObject, int> GetID = new Dictionary<ItemObject, int>();
+
+    public void OnAfterDeserialize()
     {
-        
+        GetID = new Dictionary<ItemObject, int>();
+        for (int i = 0; i < Items.Length; i++)
+        {
+            GetID.Add(Items[i], i);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnBeforeSerialize()
     {
-        
     }
 }
