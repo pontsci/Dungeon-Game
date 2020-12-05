@@ -13,8 +13,8 @@ public enum ItemType
 }
 public class ItemObject : ScriptableObject
 {
+    public int ID;
     public Sprite uiDisplay; //sprite to use for UI
-    public GameObject prefab; //possibly unneeded, remove if we have time
     public ItemType type; //the item type
     [TextArea(15,20)]
     public string description; //item description

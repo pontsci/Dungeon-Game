@@ -9,29 +9,20 @@ using UnityEditor;
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
-    private ItemDatabaseObject database;
-    public List<InventorySlot> Container = new List<InventorySlot>();
-
-    private void OnEnable()
-    {
-#if UNITY_EDITOR
-        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
-#else
-        database = Resources.Load<ItemDatabaseObject>("Database");
-#endif
-    }
+    public ItemDatabaseObject database;
+    public Inventory Container;
 
     public void AddItem(ItemObject item, int amount)
     {
-        for(int i = 0; i < Container.Count; i++)
+        for(int i = 0; i < Container.Items.Count; i++)
         {
-            if(Container[i].item == item)
+            if(Container.Items[i].item == item)
             {
-                Container[i].AddAmount(amount);
+                Container.Items[i].AddAmount(amount);
                 return;
             }
         }
-        Container.Add(new InventorySlot(database.GetID[item], item, amount));
+        Container.Items.Add(new InventorySlot(database.GetID[item], item, amount));
     }
 
     public void Save()
@@ -56,17 +47,23 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        for (int i = 0; i < Container.Count; i++)
+        for (int i = 0; i < Container.Items.Count; i++)
         {
-            Debug.Log("The ID given: " + Container[i].ID);
-            Debug.Log("The item received: " + database.GetItem[Container[i].ID]);
-            Container[i].item = database.GetItem[Container[i].ID];
+            Debug.Log("The ID given: " + Container.Items[i].ID);
+            Debug.Log("The item received: " + database.GetItem[Container.Items[i].ID]);
+            Container.Items[i].item = database.GetItem[Container.Items[i].ID];
         }
     }
 
     public void OnBeforeSerialize()
     {
     }
+}
+
+[System.Serializable]
+public class Inventory
+{
+    public List<InventorySlot> Items = new List<InventorySlot>();
 }
 
 [System.Serializable]
