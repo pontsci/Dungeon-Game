@@ -14,6 +14,14 @@ public class InventoryObject : ScriptableObject
 
     public void AddItem(Item item, int amount)
     {
+        //if an item has buffs, don't stack it
+        if(item.buffs.Length > 0)
+        {
+            inventoryContainer.Items.Add(new InventorySlot(item.ID, item, amount));
+            return;
+        }
+
+        //stack the item if we have it already
         for(int i = 0; i < inventoryContainer.Items.Count; i++)
         {
             if(inventoryContainer.Items[i].item.ID == item.ID)
