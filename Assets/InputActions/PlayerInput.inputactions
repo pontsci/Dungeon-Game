@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Open Inventory",
+                    "name": "Open/Close Inventory",
                     "type": "Button",
                     "id": "713fde8d-e0ff-440b-9dc5-90457cfa80f2",
                     "expectedControlType": "Button",
@@ -57,7 +57,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Open Inventory",
+                    "action": "Open/Close Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
