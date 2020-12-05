@@ -32,6 +32,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    // a test method for saving the inventory
+    public void SaveInventory(InputAction.CallbackContext context)
+    {
+
+    }
+
+    // a test method for loading the inventory
+    public void LoadInventory(InputAction.CallbackContext context)
+    {
+
+    }
+
     public void RemoveInteractableFromInteractableGameObjectsInRange(GameObject obj)
     {
         interactSphereScript.interactableGameObjectsInRange.Remove(obj);
