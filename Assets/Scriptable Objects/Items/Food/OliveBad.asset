@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26bced64a458f249b083e0fa400c4ad, type: 3}
   m_Name: OliveBad
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3951935813721449730, guid: 43aaf30e050dfb14bbd07c97c371b9ae, type: 3}
+  ID: 7
+  uiDisplay: {fileID: 21300000, guid: bc7d205e7c44b1343871871ced39ac51, type: 3}
   type: 1
   description: A mushy, old olive.
   restoreHungerValue: 10

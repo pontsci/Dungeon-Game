@@ -501,9 +501,29 @@ MonoBehaviour:
     m_ActionId: 60f8c2ca-f33a-4d75-b199-e03222da213d
     m_ActionName: 1stPersonController/Interact[/Keyboard/f]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 713fde8d-e0ff-440b-9dc5-90457cfa80f2
     m_ActionName: 1stPersonController/Open Inventory[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: edb82f00-c2bd-4175-96dc-aa57d0bc28a9
+    m_ActionName: 1stPersonController/Save Inventory[/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f875e310-c560-4b96-9d95-e512a51e5ffa
+    m_ActionName: 1stPersonController/Load Inventory[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 1stPersonController

@@ -1,39 +1,132 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Runtime.Serialization;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
-    public List<InventorySlot> Container = new List<InventorySlot>();
+    public string savePath;
+    public ItemDatabaseObject database;
+    public Inventory inventory;
 
-    public void AddItem(ItemObject item, int amount)
+    public void AddItem(Item item, int amount)
     {
-        bool hasItem = false;
-
-        for(int i = 0; i < Container.Count; i++)
+        //if an item has buffs, don't stack it
+        if (item.buffs.Length > 0)
         {
-            if(Container[i].item == item)
+            SetEmptySlot(item, amount);
+            return;
+        }
+
+        //stack the item if we have it already
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if (inventory.slots[i].ID == item.ID)
             {
-                Container[i].AddAmount(amount);
-                hasItem = true;
-                break;
+                inventory.slots[i].AddAmount(amount);
+                return;
             }
         }
-        if (!hasItem)
+        SetEmptySlot(item, amount);
+    }
+
+    public InventorySlot SetEmptySlot(Item item, int amount)
+    {
+        for (int i = 0; i < inventory.slots.Length; i++)
         {
-            Container.Add(new InventorySlot(item, amount));
+            if (inventory.slots[i].ID <= -1)
+            {
+                inventory.slots[i].UpdateSlot(item.ID, item, amount);
+                return inventory.slots[i];
+            }
+        }
+        //setup functionality for full inventory
+        return null;
+    }
+
+    //swaps two items by updating their slots
+    public void SwapSlots(InventorySlot itemOne, InventorySlot itemTwo)
+    {
+        InventorySlot temp = new InventorySlot(itemTwo.ID, itemTwo.item, itemTwo.amount);
+        itemTwo.UpdateSlot(itemOne.ID, itemOne.item, itemOne.amount);
+        itemOne.UpdateSlot(temp.ID, temp.item, temp.amount);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if(inventory.slots[i].item == item)
+            {
+                inventory.slots[i].UpdateSlot(-1, null, 0);
+            }
         }
     }
+
+
+    [ContextMenu("Save")]
+    public void Save()
+    {
+        IFormatter formatter = new BinaryFormatter();
+        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
+        formatter.Serialize(stream, inventory);
+        stream.Close();
+    }
+
+    [ContextMenu("Load")]
+    public void Load()
+    {
+        if (File.Exists(string.Concat(Application.persistentDataPath, savePath))){
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
+            Inventory newInventory = (Inventory)formatter.Deserialize(stream);
+            for (int i = 0; i < inventory.slots.Length; i++)
+            {
+                inventory.slots[i].UpdateSlot(newInventory.slots[i].ID, newInventory.slots[i].item, newInventory.slots[i].amount);
+            }
+            stream.Close();
+
+        }
+    }
+    [ContextMenu("Clear")]
+    public void Clear()
+    {
+        inventory = new Inventory();
+    }
+}
+
+[System.Serializable]
+public class Inventory
+{
+    public InventorySlot[] slots = new InventorySlot[24];
 }
 
 [System.Serializable]
 public class InventorySlot
 {
-    public ItemObject item;
+    public int ID;
+    public Item item;
     public int amount;
-    public InventorySlot(ItemObject item, int amount)
+
+    public InventorySlot()
     {
+        ID = -1;
+        item = null;
+        amount = 0;
+    }
+    public InventorySlot(int ID, Item item, int amount)
+    {
+        this.ID = ID;
+        this.item = item;
+        this.amount = amount;
+    }
+
+    public void UpdateSlot(int ID, Item item, int amount)
+    {
+        this.ID = ID;
         this.item = item;
         this.amount = amount;
     }
