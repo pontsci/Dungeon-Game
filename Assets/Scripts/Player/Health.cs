@@ -27,8 +27,7 @@ public class Health : MonoBehaviour
     }
 
     public void RemoveHealth(int health_value) {
-        health = health - health_value;
-        if (health <= 0)
+        if (health - health_value < 0)
         {
             health = 0;
             isDead = true; //may not be needed
@@ -38,6 +37,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            health = health - health_value;
             healthBar.SetHealth(health);
         }
     }

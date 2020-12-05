@@ -12,11 +12,8 @@ public class BearTrap : MonoBehaviour
         Debug.Log("We collided with : " + other);
         if (other.tag == "Player")
         {
-            Debug.Log("We collided with: " + other);
             playerHealthScript = other.gameObject.GetComponent<Health>();
-            Debug.Log("Health before: " + playerHealthScript.getHealth());
             playerHealthScript.RemoveHealth(bearTrapData.removeHealthValue);
-            Debug.Log("Health after: " + playerHealthScript.getHealth());
             Destroy(gameObject);
          }
     }
