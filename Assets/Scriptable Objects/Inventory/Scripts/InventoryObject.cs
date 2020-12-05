@@ -48,6 +48,8 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     {
         for (int i = 0; i < Container.Count; i++)
         {
+            Debug.Log("The ID given: " + Container[i].ID);
+            Debug.Log("The item received: " + database.GetItem[Container[i].ID]);
             Container[i].item = database.GetItem[Container[i].ID];
         }
     }
