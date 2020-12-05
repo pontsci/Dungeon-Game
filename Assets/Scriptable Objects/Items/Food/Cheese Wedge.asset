@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b265b36e4e8be0e4386f30c4599e4778, type: 3}
   m_Name: Cheese Wedge
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8487265138831769418, guid: a3327e9529c154146b94509e039d12c4, type: 3}
+  ID: 2
+  uiDisplay: {fileID: 21300000, guid: 8bd1eab2476fe4544adfb676c557a346, type: 3}
   type: 0
   description: A delicious, large wedge of cheese.
   restoreHungerValue: 50

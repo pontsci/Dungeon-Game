@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b265b36e4e8be0e4386f30c4599e4778, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6655529170157775209, guid: af2b16913fae4d444b9f6050ff59b961, type: 3}
+  ID: 0
+  uiDisplay: {fileID: 21300000, guid: 2857c80c1adf8cb48b264b5aee27d054, type: 3}
   type: 0
   description: A large, ripe banana.
   restoreHungerValue: 30

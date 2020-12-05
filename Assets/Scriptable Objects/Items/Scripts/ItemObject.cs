@@ -19,3 +19,15 @@ public class ItemObject : ScriptableObject
     [TextArea(15,20)]
     public string description; //item description
 }
+
+[System.Serializable]
+public class Item
+{
+    public string name;
+    public int ID;
+    public Item(ItemObject item)
+    {
+        name = item.name;
+        ID = item.ID;
+    }
+}
