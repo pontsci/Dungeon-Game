@@ -366,6 +366,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70fa157db8359de47a0dd9e3769c8cae, type: 3}
+--- !u!114 &277903717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1179677997767934538, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+  m_PrefabInstance: {fileID: 5458654496730744415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57821ff7e391a3a49817417eae68b9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &290791151
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +418,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6116610987818404848, guid: d662ba65364a76b4a94080d468323b7c, type: 3}
+      propertyPath: foodBar
+      value: 
+      objectReference: {fileID: 277903717}
     - target: {fileID: 8126176464478640773, guid: d662ba65364a76b4a94080d468323b7c, type: 3}
       propertyPath: healthBar
       value: 
@@ -2317,6 +2332,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3431836041808947704, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431836041808947704, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5458654494852394049, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
       propertyPath: m_Name
       value: Canvas
