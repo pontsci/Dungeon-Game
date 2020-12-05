@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HEALTH: 100
+  healthBar: {fileID: 0}
 --- !u!1 &8765378845172554394
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,10 +523,6 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 2fed6061166061f4781edbc8d1adc3e2, type: 2}
   interactableGameObjectsInRange: []
   interactSphereScript: {fileID: 1251544144669516445}
-  health: 100
-  food: 100
-  MAXHEALTH: 100
-  MAXFOOD: 100
 --- !u!114 &8126176464478640773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,3 +536,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HEALTH: 100
+  healthBar: {fileID: 5228324086466127216, guid: a33322b3bb8da244685c20e904c6069d, type: 3}
