@@ -8402,6 +8402,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3431836041808947704, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431836041808947704, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5458654494852394049, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
       propertyPath: m_Name
       value: Health Canvas
@@ -20324,12 +20332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ef806eac49ace47bf02fbb637febd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPrefab: {fileID: 0}
   inventory: {fileID: 11400000, guid: 2fed6061166061f4781edbc8d1adc3e2, type: 2}
-  X_START: -100
-  Y_START: 165
-  X_SPACE_BETWEEN_ITEM: 70
-  NUMBER_OF_COLUMNS: 6
-  Y_SPACE_BETWEEN_ITEM: 70
 --- !u!114 &1661745968
 MonoBehaviour:
   m_ObjectHideFlags: 0
