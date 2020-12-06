@@ -12,7 +12,7 @@ public class DisplayInventory : MonoBehaviour
     public GameObject inventoryPrefab;
     public InventoryObject inventory;
 
-    Dictionary<GameObject, InventorySlot> itemToSlotHash = new Dictionary<GameObject, InventorySlot>();
+    public Dictionary<GameObject, InventorySlot> itemToSlotHash = new Dictionary<GameObject, InventorySlot>();
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +51,7 @@ public class DisplayInventory : MonoBehaviour
         {
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
 
+            //each button/slot/item will have these events
             AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
             AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
