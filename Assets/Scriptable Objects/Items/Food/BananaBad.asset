@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26bced64a458f249b083e0fa400c4ad, type: 3}
   m_Name: BananaBad
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9159439902938027026, guid: 2f463eaf020c6614eb9d0e62cd43cb5c, type: 3}
+  ID: 1
+  uiDisplay: {fileID: 21300000, guid: 5e7735028906804449da3505592d7ebf, type: 3}
   type: 1
   description: An old, heavily bruised banana.
   restoreHungerValue: 30

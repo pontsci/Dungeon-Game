@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b265b36e4e8be0e4386f30c4599e4778, type: 3}
   m_Name: Cherry
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8762838809138462691, guid: 8826b297a5072c445b5c2f0c6b954a95, type: 3}
+  ID: 4
+  uiDisplay: {fileID: 21300000, guid: 582fed75dd81c2941b2368809e22cbe4, type: 3}
   type: 0
   description: A nice juicy cherry.
   restoreHungerValue: 20

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26bced64a458f249b083e0fa400c4ad, type: 3}
   m_Name: CherryBad
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7122608294991451409, guid: f71070aa97b23484c87b93956f331b59, type: 3}
+  ID: 5
+  uiDisplay: {fileID: 21300000, guid: bbc4cdfb03ad12a46a7ff47ece407e82, type: 3}
   type: 1
   description: An old, mushy cherry.
   restoreHungerValue: 20

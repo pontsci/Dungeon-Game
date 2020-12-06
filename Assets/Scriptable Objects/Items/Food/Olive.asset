@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b265b36e4e8be0e4386f30c4599e4778, type: 3}
   m_Name: Olive
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4314339032420510130, guid: 2dfc168a2f151d845bdaa429aa1780eb, type: 3}
+  ID: 6
+  uiDisplay: {fileID: 21300000, guid: ecf05154840eedb4188b974ab09ae61f, type: 3}
+  prefab: {fileID: 0}
   type: 0
   description: A mundane olive.
+  buffs: []
   restoreHungerValue: 10
