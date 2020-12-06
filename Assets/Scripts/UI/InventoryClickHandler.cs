@@ -17,7 +17,7 @@ public class InventoryClickHandler : ClickHandler, IPointerClickHandler
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            Debug.Log("Right click on slot!");
+            //Debug.Log("Right click on slot!");
             Dictionary<GameObject, InventorySlot> itemToSlotHash = displayScript.itemToSlotHash;
             GameObject mouseHoverObj = displayScript.mouseItem.hoverObj;
             
