@@ -28,8 +28,10 @@ public class ItemObject : ScriptableObject
     [TextArea(15,20)]
     public string description; //item description
     public ItemBuff[] buffs;
+    public int restoreHungerValue;
+    public float poisonChance;
 
-    public Item CreateItem()
+    public virtual Item CreateItem()
     {
         return new Item(this);
     }
@@ -41,8 +43,19 @@ public class Item
     public string name;
     public int ID;
     public ItemBuff[] buffs;
+    public int restoreHungerValue;
+    public float poisonChance;
     public Item(ItemObject item)
     {
+        if(item.type == ItemType.Food)
+        {
+            restoreHungerValue = item.restoreHungerValue;
+        }
+        if (item.type == ItemType.BadFood)
+        {
+            restoreHungerValue = item.restoreHungerValue;
+            poisonChance = item.poisonChance;
+        }
         name = item.name;
         ID = item.ID;
         buffs = new ItemBuff[item.buffs.Length];

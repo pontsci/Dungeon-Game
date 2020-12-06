@@ -7,6 +7,7 @@ TagManager:
   - InteractSphere
   - Interactable
   - Skeleton
+  - InventoryScreen
   layers:
   - Default
   - TransparentFX

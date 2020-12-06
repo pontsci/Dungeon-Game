@@ -2,16 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class InventoryClickHandler : MonoBehaviour, IPointerClickHandler
+public class InventoryClickHandler : ClickHandler, IPointerClickHandler
 {
-    public void OnPointerClick(PointerEventData eventData)
+    public GameObject contextMenuPrefab;
+    private DisplayInventory displayScript;
+
+    private void Start()
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
-            Debug.Log("Left click");
-        else if (eventData.button == PointerEventData.InputButton.Middle)
-            Debug.Log("Middle click");
-        else if (eventData.button == PointerEventData.InputButton.Right)
-            Debug.Log("Right click");
+        displayScript = transform.parent.GetComponent<DisplayInventory>();
+    }
+    public override void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            Debug.Log("Right click on slot!");
+            Dictionary<GameObject, InventorySlot> itemToSlotHash = displayScript.itemToSlotHash;
+            GameObject mouseHoverObj = displayScript.mouseItem.hoverObj;
+            
+            if (itemToSlotHash.ContainsKey(mouseHoverObj))
+            {
+                if (itemToSlotHash[mouseHoverObj].amount >= 1)
+                {
+
+                    var obj = Instantiate(contextMenuPrefab, Input.mousePosition, Quaternion.identity, transform);
+                    if (itemToSlotHash[mouseHoverObj].item.restoreHungerValue > 0)
+                    {
+                        Text text = obj.GetComponentInChildren<Text>();
+                        text.text = "Eat";
+                    }
+                    else
+                    {
+                        Text text = obj.GetComponentInChildren<Text>();
+                        text.text = "Undefined";
+                    }
+                }
+            }
+        }
     }
 }

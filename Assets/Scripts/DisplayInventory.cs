@@ -12,7 +12,7 @@ public class DisplayInventory : MonoBehaviour
     public GameObject inventoryPrefab;
     public InventoryObject inventory;
 
-    Dictionary<GameObject, InventorySlot> itemToSlotHash = new Dictionary<GameObject, InventorySlot>();
+    public Dictionary<GameObject, InventorySlot> itemToSlotHash = new Dictionary<GameObject, InventorySlot>();
     // Start is called before the first frame update
     void Start()
     {

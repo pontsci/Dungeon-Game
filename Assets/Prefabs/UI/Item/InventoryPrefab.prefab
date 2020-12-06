@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4624468252059707064}
   - component: {fileID: 1315669150831465458}
   - component: {fileID: 5869757607353703604}
-  - component: {fileID: 2423162714742332315}
+  - component: {fileID: 5065532321752008123}
   m_Layer: 5
   m_Name: InventoryPrefab
   m_TagString: Untagged
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &2423162714742332315
+--- !u!114 &5065532321752008123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5adfd7bca2c2340976c7812469a158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contextMenuPrefab: {fileID: 3332481904250639528, guid: a6fc6a4ceacb3cc48b50eb1355f221db, type: 3}
 --- !u!1 &9155077240770044080
 GameObject:
   m_ObjectHideFlags: 0

@@ -135,4 +135,14 @@ public class InventorySlot
     {
         amount += value;
     }
+
+    public void DecreaseAmount(int value)
+    {
+        amount -= Mathf.Abs(value);
+        //if we hit zero, null the slot
+        if(amount == 0)
+        {
+            UpdateSlot(-1, null, 0);
+        }
+    }
 }
