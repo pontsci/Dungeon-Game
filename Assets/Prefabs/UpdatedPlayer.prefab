@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1447705907041843485}
   - component: {fileID: 3472314773876500584}
   m_Layer: 0
-  m_Name: Player
+  m_Name: UpdatedPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,7 +583,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8470376370150179077
 MonoBehaviour:
