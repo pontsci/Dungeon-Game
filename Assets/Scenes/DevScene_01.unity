@@ -1869,7 +1869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2122975761033787650, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2122975761033787655, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
       propertyPath: inventoryCanvas
@@ -2056,7 +2056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2122975761033787650, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2122975761033787655, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
       propertyPath: inventoryCanvas
