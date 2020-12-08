@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         inventoryCanvas.GetComponent<Canvas>().enabled = false;
     }
 
+
     public void ActivateInteractableAtZeroIndex(InputAction.CallbackContext context)
     {
         //interact with the object if the inventory is not open
