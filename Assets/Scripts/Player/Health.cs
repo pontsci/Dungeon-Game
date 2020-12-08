@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public int MAX_HEALTH = 100;
     private int health;
     private bool isDead = false;
+    private DisplayInventory displayScript;
 
     public HealthBar healthBar;
 
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
     {
         health = MAX_HEALTH;
         healthBar.SetMaxHealth(MAX_HEALTH);
+        displayScript = GameObject.FindGameObjectWithTag("InventoryScreen").GetComponent<DisplayInventory>();
     }
 
     public void AddHealth(int health_value)
@@ -35,6 +37,7 @@ public class Health : MonoBehaviour
             healthBar.SetHealth(health);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            displayScript.ResetSlots();
             Destroy(gameObject);
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
