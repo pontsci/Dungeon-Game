@@ -8,6 +8,9 @@ TagManager:
   - Interactable
   - Skeleton
   - InventoryScreen
+  - FoodFill
+  - HealthFill
+  - HealthBar
   layers:
   - Default
   - TransparentFX
