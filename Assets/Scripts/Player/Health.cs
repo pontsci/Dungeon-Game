@@ -15,7 +15,10 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = MAX_HEALTH;
-        healthBar.SetMaxHealth(MAX_HEALTH);
+        //The line below is to set the max health of the character. If we wanted the character to have 200 instead of 100, that's what this function would be for.
+        //However, this code is throwing a null error for some reason so we'll just comment it out. The health can still be set in the health canvas, health bar area. 
+        //There is a MAX HEALTH variable.
+        //healthBar.SetMaxHealth(MAX_HEALTH);
         displayScript = GameObject.FindGameObjectWithTag("InventoryScreen").GetComponent<DisplayInventory>();
     }
 
