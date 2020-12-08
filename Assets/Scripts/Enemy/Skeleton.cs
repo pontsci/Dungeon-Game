@@ -19,8 +19,8 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vision.isInView)
-            ChasePlayer();
+        //if (vision.isInView)
+        //    ChasePlayer();
     }
 
     public void GetPlayerTransform()
