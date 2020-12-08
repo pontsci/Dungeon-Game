@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //can comment these out and it should still work. If you do, uncomment the code in addScore.
+        //can comment these out and it should still work. If you do, make sure to uncomment the code in addScore.
         scoreDisplay = GameObject.FindGameObjectWithTag("ScoreNum").GetComponent<Text>();
         scoreDisplay.text = currentScore.ToString();
     }
