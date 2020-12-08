@@ -12,6 +12,7 @@ TagManager:
   - HealthFill
   - HealthBar
   - PlayerSword
+  - Score
   layers:
   - Default
   - TransparentFX

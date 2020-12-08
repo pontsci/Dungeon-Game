@@ -14,7 +14,6 @@ public class Health : MonoBehaviour
     public Color poisonedColor;
     public Color healthyColor;
 
-    ////E73F3F
     private HealthBar healthBar;
 
     // Start is called before the first frame update
