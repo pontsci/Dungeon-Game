@@ -22,17 +22,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Save Inventory",
+                    "name": "Melee Attack",
                     "type": "Button",
-                    "id": "edb82f00-c2bd-4175-96dc-aa57d0bc28a9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Load Inventory",
-                    "type": "Button",
-                    "id": "f875e310-c560-4b96-9d95-e512a51e5ffa",
+                    "id": "8cfdd4f0-3622-45fe-b126-57266ac8014b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -63,23 +55,12 @@
                 },
                 {
                     "name": "",
-                    "id": "4074a2dd-7275-492e-8783-c99dc733fcb8",
-                    "path": "<Keyboard>/k",
+                    "id": "6df85e74-6124-4135-8843-13824f61784a",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Save Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b62cb57c-b254-48a2-acab-23866495a513",
-                    "path": "<Keyboard>/l",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Load Inventory",
+                    "action": "Melee Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

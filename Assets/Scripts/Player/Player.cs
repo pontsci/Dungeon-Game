@@ -20,6 +20,15 @@ public class Player : MonoBehaviour
         inventoryCanvas.GetComponent<Canvas>().enabled = false;
     }
 
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Attack!");
+            //do sword script attack
+        }
+    }
+
     public void ActivateInteractableAtZeroIndex(InputAction.CallbackContext context)
     {
         //interact with the object if the inventory is not open
