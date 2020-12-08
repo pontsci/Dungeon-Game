@@ -131,6 +131,13 @@ public class InventorySlot
         this.amount = amount;
     }
 
+    public void SetEmptySlot()
+    {
+        this.ID = -1;
+        this.item = null;
+        this.amount = 0;
+    }
+
     public void AddAmount(int value)
     {
         amount += value;

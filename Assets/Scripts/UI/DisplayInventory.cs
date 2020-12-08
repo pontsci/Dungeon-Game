@@ -27,28 +27,30 @@ public class DisplayInventory : MonoBehaviour
 
     public void UpdateSlots()
     {
-        foreach (KeyValuePair<GameObject, InventorySlot> slot in itemToSlotHash)
+        foreach (KeyValuePair<GameObject, InventorySlot> objectToSlot in itemToSlotHash)
         {
-            if(slot.Value.ID >= 0)
+            //Debug.Log("The slot key: " + objectToSlot.Key + " The slot ID value: " + objectToSlot.Value.ID);
+            if(objectToSlot.Value.ID >= 0)
             {
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.GetItem[slot.Value.ID].uiDisplay;
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
-                slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = slot.Value.amount == 1 ? "" : slot.Value.amount.ToString("n0");
+                objectToSlot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.GetItem[objectToSlot.Value.ID].uiDisplay;
+                objectToSlot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
+                objectToSlot.Key.GetComponentInChildren<TextMeshProUGUI>().text = objectToSlot.Value.amount == 1 ? "" : objectToSlot.Value.amount.ToString("n0");
             }
             else
             {
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
-                slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = "";
+                objectToSlot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+                objectToSlot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
+                objectToSlot.Key.GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
         }
     }
 
     public void CreateSlots()
     {
-        itemToSlotHash = new Dictionary<GameObject, InventorySlot>(); //this line may not be needed
+        //itemToSlotHash = new Dictionary<GameObject, InventorySlot>(); //this line may not be needed
         for (int i = 0; i < inventory.inventory.slots.Length; i++)
         {
+            Debug.Log("Creating Slots: " + i);
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
 
             //each button/slot/item will have these events
@@ -58,9 +60,18 @@ public class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
 
+            Debug.Log("Slot added to itemToSlotHash: " + inventory.inventory.slots[i].ID);
             itemToSlotHash.Add(obj, inventory.inventory.slots[i]);
         }
 
+    }
+
+    public void ResetSlots()
+    {
+        foreach(KeyValuePair<GameObject, InventorySlot> slot in itemToSlotHash)
+        {
+            slot.Value.SetEmptySlot();
+        }
     }
 
     public void OnEnter(GameObject obj)

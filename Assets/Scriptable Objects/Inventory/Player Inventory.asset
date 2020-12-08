@@ -14,5 +14,197 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savePath: /inventory.save
   database: {fileID: 11400000, guid: b58f845a999ea23468c50a3a7e4df9f1, type: 2}
-  inventoryContainer:
-    Items: []
+  inventory:
+    slots:
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0
+    - ID: -1
+      item:
+        name: 
+        ID: 0
+        buffs: []
+        restoreHungerValue: 0
+        poisonChance: 0
+      amount: 0

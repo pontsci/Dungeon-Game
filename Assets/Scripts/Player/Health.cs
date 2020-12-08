@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public int MAX_HEALTH = 100;
     private int health;
     private bool isDead = false;
+    private DisplayInventory displayScript;
 
     public HealthBar healthBar;
 
@@ -14,7 +15,11 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = MAX_HEALTH;
-        healthBar.SetMaxHealth(MAX_HEALTH);
+        //The line below is to set the max health of the character. If we wanted the character to have 200 instead of 100, that's what this function would be for.
+        //However, this code is throwing a null error for some reason so we'll just comment it out. The health can still be set in the health canvas, health bar area. 
+        //There is a MAX HEALTH variable.
+        //healthBar.SetMaxHealth(MAX_HEALTH);
+        displayScript = GameObject.FindGameObjectWithTag("InventoryScreen").GetComponent<DisplayInventory>();
     }
 
     public void AddHealth(int health_value)
@@ -27,13 +32,17 @@ public class Health : MonoBehaviour
     }
 
     public void RemoveHealth(int health_value) {
-        if (health - health_value < 0)
+        if (health - health_value <= 0)
         {
             health = 0;
             isDead = true; //may not be needed
             //go back to menu?
             healthBar.SetHealth(health);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            displayScript.ResetSlots();
             Destroy(gameObject);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
         {
