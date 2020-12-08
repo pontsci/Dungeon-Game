@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class Health : MonoBehaviour
     private int health;
     private bool isDead = false;
     private DisplayInventory displayScript;
+    private bool isPoisoned = false;
+    float elapsed = 0f;
+    public Color poisonedColor;
+    public Color healthyColor;
 
-    public HealthBar healthBar;
+    ////E73F3F
+    private HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +25,23 @@ public class Health : MonoBehaviour
         //However, this code is throwing a null error for some reason so we'll just comment it out. The health can still be set in the health canvas, health bar area. 
         //There is a MAX HEALTH variable.
         //healthBar.SetMaxHealth(MAX_HEALTH);
+        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
         displayScript = GameObject.FindGameObjectWithTag("InventoryScreen").GetComponent<DisplayInventory>();
+    }
+
+    void Update()
+    {
+
+        if (isPoisoned)
+        {
+            setIsPoisoned(true);
+            elapsed += Time.deltaTime;
+            if (elapsed >= 5f)
+            {
+                elapsed = elapsed % 5f;
+                RemoveHealth(5);
+            }
+        }
     }
 
     public void AddHealth(int health_value)
@@ -46,12 +68,27 @@ public class Health : MonoBehaviour
         }
         else
         {
-            health = health - health_value;
+            health = health - Mathf.Abs(health_value);
             healthBar.SetHealth(health);
+            Debug.Log("Current Health:" + health);
         }
     }
 
     public int getHealth() {
         return health;
+    }
+
+    public void setIsPoisoned(bool isPoisoned) {
+        this.isPoisoned = isPoisoned;
+        if (isPoisoned) {
+            //If poisoned, make the health bar green
+            Image img = GameObject.FindGameObjectWithTag("HealthFill").GetComponent<Image>();
+            img.color = poisonedColor;
+        }
+        else if (!isPoisoned) {
+            //If not poinsed, make the health bar red
+            Image img = GameObject.FindGameObjectWithTag("HealthFill").GetComponent<Image>();
+            img.color = healthyColor;
+        }
     }
 }
