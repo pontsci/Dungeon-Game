@@ -27,13 +27,16 @@ public class Health : MonoBehaviour
     }
 
     public void RemoveHealth(int health_value) {
-        if (health - health_value < 0)
+        if (health - health_value <= 0)
         {
             health = 0;
             isDead = true; //may not be needed
             //go back to menu?
             healthBar.SetHealth(health);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Destroy(gameObject);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
         {
