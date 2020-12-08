@@ -461,7 +461,19 @@ MonoBehaviour:
     m_ActionId: 713fde8d-e0ff-440b-9dc5-90457cfa80f2
     m_ActionName: 1stPersonController/Open Inventory[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4925306007985827716}
+        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
+        m_MethodName: Swing
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8cfdd4f0-3622-45fe-b126-57266ac8014b
     m_ActionName: 1stPersonController/Melee Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -485,7 +497,6 @@ MonoBehaviour:
   inventoryCanvas: {fileID: 0}
   interactableGameObjectsInRange: []
   interactSphereScript: {fileID: 8470376370150179077}
-  playerSwordScript: {fileID: 0}
 --- !u!114 &1447705907041843485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,3 +647,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2652594862381859413, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
   m_PrefabInstance: {fileID: 3565359892727974690}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4925306007985827716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8439886811340104870, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
+  m_PrefabInstance: {fileID: 3565359892727974690}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d67a53e1d57cb64e99c50639c7a4e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

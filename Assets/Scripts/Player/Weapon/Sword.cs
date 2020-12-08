@@ -17,7 +17,7 @@ public class Sword : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Swing!");
+            //Debug.Log("Swing!");
             if (swordAnimator.GetBool("isSwinging") == false)
             {
                 swordAnimator.SetBool("isSwinging", true);
