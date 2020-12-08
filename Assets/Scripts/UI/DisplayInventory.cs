@@ -50,7 +50,7 @@ public class DisplayInventory : MonoBehaviour
         //itemToSlotHash = new Dictionary<GameObject, InventorySlot>(); //this line may not be needed
         for (int i = 0; i < inventory.inventory.slots.Length; i++)
         {
-            Debug.Log("Creating Slots: " + i);
+            //Debug.Log("Creating Slots: " + i);
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
 
             //each button/slot/item will have these events
@@ -60,7 +60,7 @@ public class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
 
-            Debug.Log("Slot added to itemToSlotHash: " + inventory.inventory.slots[i].ID);
+            //Debug.Log("Slot added to itemToSlotHash: " + inventory.inventory.slots[i].ID);
             itemToSlotHash.Add(obj, inventory.inventory.slots[i]);
         }
 
