@@ -11,6 +11,7 @@ TagManager:
   - FoodFill
   - HealthFill
   - HealthBar
+  - PlayerSword
   layers:
   - Default
   - TransparentFX

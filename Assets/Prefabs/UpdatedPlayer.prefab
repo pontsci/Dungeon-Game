@@ -107,7 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HEALTH: 100
-  healthBar: {fileID: 0}
+  poisonedColor: {r: 0, g: 0, b: 0, a: 0}
+  healthyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2122975761033787650
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,37 +461,9 @@ MonoBehaviour:
     m_ActionId: 713fde8d-e0ff-440b-9dc5-90457cfa80f2
     m_ActionName: 1stPersonController/Open Inventory[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8765378845172554399, guid: d662ba65364a76b4a94080d468323b7c, type: 3}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: SaveInventory
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: edb82f00-c2bd-4175-96dc-aa57d0bc28a9
-    m_ActionName: 1stPersonController/Save Inventory[/Keyboard/k]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8765378845172554399, guid: d662ba65364a76b4a94080d468323b7c, type: 3}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: LoadInventory
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f875e310-c560-4b96-9d95-e512a51e5ffa
-    m_ActionName: 1stPersonController/Load Inventory[/Keyboard/l]
+      m_Calls: []
+    m_ActionId: 8cfdd4f0-3622-45fe-b126-57266ac8014b
+    m_ActionName: 1stPersonController/Melee Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 1stPersonController
@@ -512,6 +485,7 @@ MonoBehaviour:
   inventoryCanvas: {fileID: 0}
   interactableGameObjectsInRange: []
   interactSphereScript: {fileID: 8470376370150179077}
+  playerSwordScript: {fileID: 0}
 --- !u!114 &1447705907041843485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HEALTH: 100
-  healthBar: {fileID: 0}
+  poisonedColor: {r: 0, g: 0, b: 0, a: 0}
+  healthyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3472314773876500584
 MonoBehaviour:
   m_ObjectHideFlags: 0
