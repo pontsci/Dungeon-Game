@@ -22,16 +22,15 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vision.playerReached)
-        {
-            audioSource.PlayOneShot(swing, .7F);
-        }
-
-        isDead();
+        
     }
 
     public void damage(int takeDamage)
     {
+        if (vision.playerReached)
+        {
+            audioSource.PlayOneShot(swing, .7F);
+        }
         health -= takeDamage;
         print(health);
     }

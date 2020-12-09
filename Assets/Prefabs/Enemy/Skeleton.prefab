@@ -369,7 +369,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084584402176355622}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.25
   m_Speed: 3.5
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swing: {fileID: 8300000, guid: d5018bdabb5d47445905470c1a14c51f, type: 3}
-  health: 100
+  health: 150
 --- !u!1 &2084584402176355624
 GameObject:
   m_ObjectHideFlags: 0

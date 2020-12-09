@@ -9,9 +9,11 @@ public class SwordHitBox : MonoBehaviour
     private Sword action;
     private void Start()
     {
-        //skel = GameObject.FindGameObjectsWithTag("Skeleton"); // many skeletons
-        //skel = GameObject.FindGameObjectWithTag("Skeleton").GetComponent<Skeleton>();
-        action = GameObject.FindGameObjectWithTag("PlayerSword").GetComponent<Sword>(); // only 1 sword
+        action = GameObject.FindGameObjectWithTag("PlayerSword").GetComponent<Sword>();
+    }
+    private void Update()
+    {
+        
     }
     private void OnTriggerEnter(Collider other)
     {

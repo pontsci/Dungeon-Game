@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   description: A sword that damages the player.
-  removeHealthValue: 50
+  removeHealthValue: 5
