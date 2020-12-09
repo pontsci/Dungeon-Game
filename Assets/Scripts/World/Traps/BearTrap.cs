@@ -21,8 +21,14 @@ public class BearTrap : MonoBehaviour
         {
             playerHealthScript = other.gameObject.GetComponent<Health>();
             playerHealthScript.RemoveHealth(bearTrapData.removeHealthValue);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
             soundSource.PlayOneShot(scoreAudio, 1.0f);
-            Destroy(gameObject);
+            Invoke("KillTrap", 2f);
         }
+    }
+
+    private void KillTrap() {
+        Destroy(gameObject);
     }
 }

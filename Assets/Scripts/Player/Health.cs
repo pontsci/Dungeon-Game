@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Health : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
         //healthBar.SetMaxHealth(MAX_HEALTH);
         healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
         displayScript = GameObject.FindGameObjectWithTag("InventoryScreen").GetComponent<DisplayInventory>();
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -61,9 +63,11 @@ public class Health : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().enabled = false;
             displayScript.ResetSlots();
-            //Destroy(gameObject);
-            //UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+            Time.timeScale = 0;
+            Destroy(gameObject);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
         {
@@ -88,6 +92,14 @@ public class Health : MonoBehaviour
             //If not poinsed, make the health bar red
             Image img = GameObject.FindGameObjectWithTag("HealthFill").GetComponent<Image>();
             img.color = healthyColor;
+        }
+    }
+
+    private void OnGUI()
+    {
+        if (isDead)
+        {
+            
         }
     }
 }
