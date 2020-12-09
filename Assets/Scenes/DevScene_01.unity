@@ -1308,7 +1308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458654494852394111, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
       propertyPath: m_UiScaleMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458654494852394111, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -1325,6 +1325,22 @@ PrefabInstance:
     - target: {fileID: 5458654496328299557, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458654496372576602, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -821
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458654496372576602, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -443
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704624159284245921, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -821
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704624159284245921, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -496.09998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ef72357adbe09c42b5fe00880f368b1, type: 3}
