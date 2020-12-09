@@ -11,11 +11,11 @@ public class Stake : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("We collided with: " + other);
+            //Debug.Log("We collided with: " + other);
             playerHealthScript = other.gameObject.GetComponent<Health>();
-            Debug.Log("Health before: " + playerHealthScript.getHealth());
+            //Debug.Log("Health before: " + playerHealthScript.getHealth());
             playerHealthScript.RemoveHealth(stakeData.removeHealthValue);
-            Debug.Log("Health after: " + playerHealthScript.getHealth());
+            //Debug.Log("Health after: " + playerHealthScript.getHealth());
           }
     }
 

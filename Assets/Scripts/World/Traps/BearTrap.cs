@@ -9,7 +9,7 @@ public class BearTrap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("We collided with : " + other);
+        //Debug.Log("We collided with : " + other);
         if (other.tag == "Player")
         {
             playerHealthScript = other.gameObject.GetComponent<Health>();

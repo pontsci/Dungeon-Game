@@ -25,7 +25,7 @@ public class Sword : MonoBehaviour
             }
             else
             {
-                Debug.Log("In middle of swing animation!!!");
+                //Debug.Log("In middle of swing animation!!!");
             }
         }
     }

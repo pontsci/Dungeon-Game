@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
             if(interactableGameObjectsInRange.Count != 0)
             {
                 //activate our interactable object
-                Debug.Log("Activate this " + interactableGameObjectsInRange[0] + "!");
+                //Debug.Log("Activate this " + interactableGameObjectsInRange[0] + "!");
                 var interactable = interactableGameObjectsInRange[0].gameObject.GetComponent<Interactable>();
                 interactable.Activate(context);
             }

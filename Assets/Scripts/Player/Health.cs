@@ -69,7 +69,7 @@ public class Health : MonoBehaviour
         {
             health = health - Mathf.Abs(health_value);
             healthBar.SetHealth(health);
-            Debug.Log("Current Health:" + health);
+            //Debug.Log("Current Health:" + health);
         }
     }
 
