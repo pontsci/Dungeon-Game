@@ -1,40 +1,67 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
-    public bool isInView = false;
+    #region SerializeFields
+    [SerializeField]
+    int maxDistance = 10;
+    [SerializeField]
+    int minDistance = 3;
+    [SerializeField]
+    bool playerSighted = false;
+    [SerializeField]
+    int moveSpeed = 3;
+    #endregion
+
+    public Transform player;
+    public Animator anim; 
 
 
-    void FixedUpdate()
+    void Start()
     {
-        InSight();
+        anim = GetComponent<Animator>();
     }
 
-
-    // This only casts a straight line for forward vision only
-    private void InSight()
+    private void Update()
     {
-        // Bit shift the index of the layer (8) to get a bit mask
-        int layerMask = 1 << 8;
+        if (playerSighted)
+            playerFound();
+    }
 
-        // This would cast rays only against colliders in layer 8.
-        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        layerMask = ~layerMask;
+    private void playerFound()
+    {
+        Vector3 lookAtPlayer = player.position;
+        lookAtPlayer.y = transform.position.y;
+        transform.LookAt(lookAtPlayer);
 
-        RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.tag == "Player")
+        if(Vector3.Distance(transform.position, player.position) >= minDistance)
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            //Debug.Log("Did Hit");
-            isInView = true;
+            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            anim.SetInteger("condition", 1);
+            // Attack should go here as skeleton is close enough.
+
+            //if(Vector3.Distance(transform.position, player.position) <= maxDistance)
+            //{
+            //    attackScript();
+            //}
         }
-        else
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.transform == player)
+            playerSighted = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform == player)
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            //Debug.Log("Did not Hit");
+            playerSighted = false;
+            anim.SetInteger("condition", 0);
         }
     }
 }
