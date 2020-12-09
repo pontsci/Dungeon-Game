@@ -57,13 +57,13 @@ public class Health : MonoBehaviour
         {
             health = 0;
             isDead = true; //may not be needed
-            //go back to menu?
             healthBar.SetHealth(health);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
             displayScript.ResetSlots();
-            Destroy(gameObject);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+            //Destroy(gameObject);
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
         {

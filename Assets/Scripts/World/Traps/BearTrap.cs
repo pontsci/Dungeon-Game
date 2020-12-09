@@ -7,8 +7,6 @@ public class BearTrap : MonoBehaviour
     public TrapObject bearTrapData;
     private Health playerHealthScript;
 
-    float elapsed = 0f;
-
     public AudioClip scoreAudio;
     private AudioSource soundSource;
 
