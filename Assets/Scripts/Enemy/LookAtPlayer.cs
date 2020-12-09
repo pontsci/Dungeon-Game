@@ -13,6 +13,8 @@ public class LookAtPlayer : MonoBehaviour
     [SerializeField]
     bool playerSighted = false;
     [SerializeField]
+    bool playerReached = false;
+    [SerializeField]
     int moveSpeed = 3;
     #endregion
 
@@ -37,17 +39,23 @@ public class LookAtPlayer : MonoBehaviour
         lookAtPlayer.y = transform.position.y;
         transform.LookAt(lookAtPlayer);
 
-        if(Vector3.Distance(transform.position, player.position) >= minDistance)
+        if(Math.Ceiling(Vector3.Distance(transform.position, player.position)) > minDistance)
         {
+            print(Math.Ceiling(Vector3.Distance(transform.position, player.position)) + " == " + minDistance);
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
             anim.SetInteger("condition", 1);
-            // Attack should go here as skeleton is close enough.
-
-            //if(Vector3.Distance(transform.position, player.position) <= maxDistance)
-            //{
-            //    attackScript();
-            //}
+            playerReached = false;           
         }
+        else if(Math.Ceiling(Vector3.Distance(transform.position, player.position)) == minDistance)
+        {
+            playerReached = true;
+            if(playerReached)
+                anim.SetInteger("condition", 2);
+        }
+        //if (Vector3.Distance(transform.position, player.position) <= maxDistance)
+        //{
+        //    anim.SetInteger("condition", 2);
+        //}
     }
 
     private void OnTriggerStay(Collider other)
@@ -61,6 +69,7 @@ public class LookAtPlayer : MonoBehaviour
         if (other.transform == player)
         {
             playerSighted = false;
+            playerReached = false;
             anim.SetInteger("condition", 0);
         }
     }
