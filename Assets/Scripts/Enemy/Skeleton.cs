@@ -8,6 +8,10 @@ public class Skeleton : MonoBehaviour
     public AudioClip swing;
     AudioSource audioSource;
     LookAtPlayer vision;
+
+    [SerializeField]
+    int health = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +26,18 @@ public class Skeleton : MonoBehaviour
         {
             audioSource.PlayOneShot(swing, .7F);
         }
+
+        isDead();
+    }
+
+    public void damage(int takeDamage)
+    {
+        health -= takeDamage;
+    }
+
+    private void isDead()
+    {
+        if (health <= 0)
+            Destroy(gameObject);
     }
 }
