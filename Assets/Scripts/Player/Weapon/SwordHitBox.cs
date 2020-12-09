@@ -5,20 +5,23 @@ using UnityEngine;
 public class SwordHitBox : MonoBehaviour
 {
 
-    private Skeleton skel;
+    //private GameObject [] skel;
     private Sword action;
     private void Start()
     {
-        skel = GameObject.FindGameObjectWithTag("Skeleton").GetComponent<Skeleton>();
-        action = GameObject.FindGameObjectWithTag("PlayerSword").GetComponent<Sword>();
+        //skel = GameObject.FindGameObjectsWithTag("Skeleton"); // many skeletons
+        //skel = GameObject.FindGameObjectWithTag("Skeleton").GetComponent<Skeleton>();
+        action = GameObject.FindGameObjectWithTag("PlayerSword").GetComponent<Sword>(); // only 1 sword
     }
     private void OnTriggerEnter(Collider other)
     {
-        print(action.swinging);
+        
+
+       // print(action.swinging);
         if (other.tag == ("Skeleton") && action.swinging)
         {
-            print(other.tag);
-            skel.damage(80);
+            print("Entered attack");
+            other.GetComponentInParent<Skeleton>().damage(80);
         }
     }
 }

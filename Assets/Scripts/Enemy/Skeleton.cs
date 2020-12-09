@@ -33,11 +33,12 @@ public class Skeleton : MonoBehaviour
     public void damage(int takeDamage)
     {
         health -= takeDamage;
+        print(health);
     }
 
     private void isDead()
     {
         if (health <= 0)
-            Destroy(gameObject);
+            Destroy(this.gameObject);
     }
 }
