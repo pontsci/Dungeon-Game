@@ -10,7 +10,6 @@ public class Stake : MonoBehaviour
     public AudioClip scoreAudio;
     private AudioSource soundSource;
 
-
     void Start()
     {
         soundSource = GetComponent<AudioSource>();

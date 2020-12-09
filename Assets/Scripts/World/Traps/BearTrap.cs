@@ -7,20 +7,24 @@ public class BearTrap : MonoBehaviour
     public TrapObject bearTrapData;
     private Health playerHealthScript;
 
+    float elapsed = 0f;
+
+    public AudioClip scoreAudio;
+    private AudioSource soundSource;
+
+    void Start()
+    {
+        soundSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("We collided with : " + other);
         if (other.tag == "Player")
         {
             playerHealthScript = other.gameObject.GetComponent<Health>();
             playerHealthScript.RemoveHealth(bearTrapData.removeHealthValue);
+            soundSource.PlayOneShot(scoreAudio, 1.0f);
             Destroy(gameObject);
-         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }
