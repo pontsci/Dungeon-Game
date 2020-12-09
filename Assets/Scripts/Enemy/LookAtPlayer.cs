@@ -13,13 +13,12 @@ public class LookAtPlayer : MonoBehaviour
     [SerializeField]
     bool playerSighted = false;
     [SerializeField]
-    bool playerReached = false;
-    [SerializeField]
     int moveSpeed = 3;
     #endregion
 
     public Transform player;
-    public Animator anim; 
+    public Animator anim;
+    public bool playerReached = false;
 
 
     void Start()
@@ -41,7 +40,7 @@ public class LookAtPlayer : MonoBehaviour
 
         if(Math.Ceiling(Vector3.Distance(transform.position, player.position)) > minDistance)
         {
-            print(Math.Ceiling(Vector3.Distance(transform.position, player.position)) + " == " + minDistance);
+            //print(Math.Ceiling(Vector3.Distance(transform.position, player.position)) + " == " + minDistance);
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
             anim.SetInteger("condition", 1);
             playerReached = false;           
