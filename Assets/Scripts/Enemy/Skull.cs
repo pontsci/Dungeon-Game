@@ -6,17 +6,29 @@ using UnityEngine.AI;
 public class Skull : MonoBehaviour
 {
 
-    public Transform goal;
+    public Transform playerTransform;
+    protected NavMeshAgent agent;
+    protected PlayerDetector playerDetector;
+
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        agent = GetComponent<NavMeshAgent>();
+        playerDetector = GetComponentInChildren<PlayerDetector>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerDetector.playerDetected) {
+            agent.SetDestination(playerTransform.position);
+        }
     }
+
+    //lose the player, invoked by playerDetector immediately when losing the player
+    public void LosePlayer()
+    {
+        agent.SetDestination(gameObject.transform.position);
+    }
+
 }
