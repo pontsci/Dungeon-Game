@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   uiDisplay: {fileID: 21300000, guid: 5e7735028906804449da3505592d7ebf, type: 3}
+  prefab: {fileID: 0}
   type: 1
   description: An old, heavily bruised banana.
+  buffs: []
   restoreHungerValue: 30
   poisonChance: 0.2

@@ -9,12 +9,17 @@ public class ContextMenuClickHandler : ClickHandler, IPointerClickHandler
     private DisplayInventory displayScript; // the displayScript for getting the hoveredItem
     private InventorySlot currentSlot; //the slot we're hovering
     private Food playerFoodScript; //the food script for adding/substracting from food
+    private Health playerHealthScript; //the health script for adding poison
+    //int poisonChance;
+    //System.Random random;
 
     private void Start()
     {
         displayScript = transform.parent.parent.GetComponent<DisplayInventory>();
         //playerInventoryData = displayScript.inventory;
         playerFoodScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Food>();
+        playerHealthScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        //random = new System.Random();
     }
     public override void OnPointerClick(PointerEventData eventData)
     {
@@ -34,6 +39,8 @@ public class ContextMenuClickHandler : ClickHandler, IPointerClickHandler
             else if(currentSlot.item.poisonChance > 0)
             {
                 //chance to poison the player
+                //poisonChance = random.Next(0, 100);
+                //Debug.Log("Poisonous food!");
                 playerFoodScript.AddFood(currentSlot.item.restoreHungerValue);
                 currentSlot.DecreaseAmount(1);
             }
