@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        //this is just a mess, I need to clean it up. will do if have time.
         inventory.inventory.slots = new InventorySlot[24];
     }
 }

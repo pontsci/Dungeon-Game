@@ -19,7 +19,7 @@ public class DisplayInventory : MonoBehaviour
         CreateSlots();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame, this could be optimized as we don't need to update the inv every frame, but I have run out of time
     void Update()
     {
         UpdateSlots();
