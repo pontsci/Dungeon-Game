@@ -33,6 +33,7 @@ public class Skeleton : MonoBehaviour
         }
         health -= takeDamage;
         print(health);
+        isDead();
     }
 
     private void isDead()
