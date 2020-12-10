@@ -11,7 +11,7 @@ public class Skull : MonoBehaviour
     protected PlayerDetector playerDetector;
 
     // Start is called before the first frame update
-    protected void Start()
+    protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         playerDetector = GetComponentInChildren<PlayerDetector>();
