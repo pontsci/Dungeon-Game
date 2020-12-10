@@ -28,7 +28,7 @@ public class Food : MonoBehaviour
             if (elapsed >= 5f)
             {
                 elapsed = elapsed % 5f;
-                playerHealthScript.RemoveHealth(1);
+                playerHealthScript.RemoveHealth(4);
             }
         }
     }
