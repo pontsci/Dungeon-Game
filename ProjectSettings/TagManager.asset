@@ -15,6 +15,7 @@ TagManager:
   - Score
   - ScoreNum
   - EnemySword
+  - DeathScore
   layers:
   - Default
   - TransparentFX

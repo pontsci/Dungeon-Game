@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     private DisplayInventory displayScript;
     private bool isPoisoned = false;
     float elapsed = 0f;
+    public DeathMenu deathMenu;
     public Color poisonedColor;
     public Color healthyColor;
 
@@ -66,8 +67,9 @@ public class Health : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().enabled = false;
             displayScript.ResetSlots();
             Time.timeScale = 0;
-            Destroy(gameObject);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+            deathMenu.ToggleEndMenu();
+            //Destroy(gameObject);
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
         {
