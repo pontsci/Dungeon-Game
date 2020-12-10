@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 
 //this class handles the animations for the skull ambusher enemy, most variables are already set by the parent class
 public class SkullAmbusher : Skull
 {    
     private Animator animatorController;
+    public UnityEvent particleSystemOn;
+    public UnityEvent particleSystemOff;
 
     protected override void Start()
     {
@@ -31,6 +32,12 @@ public class SkullAmbusher : Skull
         agent.SetDestination(spawnPosition);
         agent.stoppingDistance = spawnStoppingDistance;
         animatorController.SetBool("playerDetected", false);
+        Invoke("ParticlesOff", 5f);
+    }
+
+    private void ParticlesOff()
+    {
+        particleSystemOff.Invoke();
     }
 
     public override void DetectPlayer()
@@ -38,5 +45,6 @@ public class SkullAmbusher : Skull
         base.DetectPlayer();
         animatorController.SetBool("playerDetected", true);
         animatorController.SetBool("isAtSpawn", false);
+        particleSystemOn.Invoke();
     }
 }
