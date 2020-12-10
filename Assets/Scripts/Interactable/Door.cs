@@ -17,15 +17,9 @@ public class Door : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void CloseDoor()
     {
-        Debug.Log("Door says: Closing the door.");
+        //Debug.Log("Door says: Closing the door.");
         doorClosed = true;
         animator.SetBool("isClosing", true);
         animator.SetBool("isOpening", false);
@@ -34,7 +28,7 @@ public class Door : MonoBehaviour
 
     public void OpenDoor()
     {
-        Debug.Log("Door says: Opening the door.");
+        //Debug.Log("Door says: Opening the door.");
         doorClosed = false;
         animator.SetBool("isClosing", false);
         animator.SetBool("isOpening", true);

@@ -59,31 +59,6 @@ public class InventoryObject : ScriptableObject
         }
     }
 
-
-    [ContextMenu("Save")]
-    public void Save()
-    {
-        IFormatter formatter = new BinaryFormatter();
-        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
-        formatter.Serialize(stream, inventory);
-        stream.Close();
-    }
-
-    [ContextMenu("Load")]
-    public void Load()
-    {
-        if (File.Exists(string.Concat(Application.persistentDataPath, savePath))){
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            Inventory newInventory = (Inventory)formatter.Deserialize(stream);
-            for (int i = 0; i < inventory.slots.Length; i++)
-            {
-                inventory.slots[i].UpdateSlot(newInventory.slots[i].ID, newInventory.slots[i].item, newInventory.slots[i].amount);
-            }
-            stream.Close();
-
-        }
-    }
     [ContextMenu("Clear")]
     public void Clear()
     {
