@@ -7,6 +7,7 @@ public class PlayerDetector : MonoBehaviour
 {
     public float detectionRadius = 7f;
     public UnityEvent lostDetection;
+    public UnityEvent gainedDetection;
     public bool expandDetection = false;
     public float expansionAmount = 5f;
     private SphereCollider detectionSphere;
@@ -27,6 +28,7 @@ public class PlayerDetector : MonoBehaviour
             {
                 detectionSphere.radius += expansionAmount;
             }
+            gainedDetection.Invoke();
         }
     }
 

@@ -2,21 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//this class handles the animations for the skull ambusher enemy, most variables are already set by the parent class
 public class SkullAmbusher : Skull
-{    // Update is called once per frame
+{    
     private Animator animatorController;
 
     protected override void Start()
     {
         base.Start();
-        animatorController = GetComponent<Animator>();
+        animatorController = GetComponentInChildren<Animator>();
     }
-    void Update()
+    protected override void Update()
     {
-        if (playerDetector.playerDetected) {
-            agent.SetDestination(playerTransform.position);
-            animatorController.SetBool("playerDetected", true);
-            animatorController.SetBool("isAtSpawn", false);
+        base.Update();
+
+        //if we're at the spawn, then we need to go into the spawn idle position
+        if (isAtSpawn)
+        {
+            animatorController.SetBool("isAtSpawn", true);
         }
+        
+    }
+
+    public override void LosePlayer()
+    {
+        base.LosePlayer();
+        animatorController.SetBool("playerDetected", false);
+    }
+
+    public override void DetectPlayer()
+    {
+        base.DetectPlayer();
+        animatorController.SetBool("playerDetected", true);
+        animatorController.SetBool("isAtSpawn", false);
     }
 }
