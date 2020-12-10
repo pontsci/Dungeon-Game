@@ -68,8 +68,6 @@ public class Health : MonoBehaviour
             displayScript.ResetSlots();
             Time.timeScale = 0;
             deathMenu.ToggleEndMenu();
-            //Destroy(gameObject);
-            //UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
         {
