@@ -11,12 +11,14 @@ public class Lever : Interactable
     // Start is called before the first frame update
     protected override void Start()
     {
+        //do parent start
         base.Start();
         doorScript = door.GetComponent<Door>();
     }
 
     public override void Activate()
     {
+        //if we're in the interact sphere, activate the lever!
         if (inInteractSphere)
         {
             if (!doorScript.doorMoving)
@@ -24,12 +26,12 @@ public class Lever : Interactable
                 doorScript.doorMoving = true;
                 if (doorScript.doorClosed)
                 {
-                    Debug.Log("Lever says: Open the door!");
+                    //Debug.Log("Lever says: Open the door!");
                     doorScript.OpenDoor();
                 }
                 else
                 {
-                    Debug.Log("Lever says: Close the door!");
+                    //Debug.Log("Lever says: Close the door!");
                     doorScript.CloseDoor();
                 }
             }

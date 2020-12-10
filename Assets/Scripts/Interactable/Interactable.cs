@@ -17,7 +17,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void Start()
     {
-        //the renderer
+        //initiialize the renderer and playerScript
         rend = gameObject.GetComponent<Renderer>();
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
