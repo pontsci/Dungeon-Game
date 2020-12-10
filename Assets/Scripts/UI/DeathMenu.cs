@@ -20,4 +20,8 @@ public class DeathMenu : MonoBehaviour
         GameObject.FindGameObjectWithTag("DeathScore").GetComponent<Text>().text = scoreManager.currentScore.ToString();
 
     }
+
+    public void ToMenu() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
 }
