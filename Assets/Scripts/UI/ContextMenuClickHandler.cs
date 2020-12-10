@@ -53,6 +53,12 @@ public class ContextMenuClickHandler : ClickHandler, IPointerClickHandler
                 playerFoodScript.AddFood(currentSlot.item.restoreHungerValue);
                 currentSlot.DecreaseAmount(1);
             }
+            else
+            {
+                playerHealthScript.setIsPoisoned(false);
+                playerHealthScript.AddHealth(50);
+                currentSlot.DecreaseAmount(1);
+            }
 
             DeleteContextMenu();
         }
