@@ -7,6 +7,7 @@ public class Food : MonoBehaviour
     public int MAX_FOOD = 100;
     private int food;
 
+    //If foodbar is disconnected, you can reconnect it by going the updated player in the scene.
     public FoodBar foodBar;
     public Health playerHealthScript;
     float elapsed = 0f;
