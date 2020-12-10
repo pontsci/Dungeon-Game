@@ -27,7 +27,6 @@ public class ItemObject : ScriptableObject
     public ItemType type; //the item type
     [TextArea(15,20)]
     public string description; //item description
-    public ItemBuff[] buffs;
     public int restoreHungerValue;
     public float poisonChance;
 
@@ -58,12 +57,6 @@ public class Item
         }
         name = item.name;
         ID = item.ID;
-        buffs = new ItemBuff[item.buffs.Length];
-        for (int i = 0; i < buffs.Length; i++)
-        {
-            buffs[i] = new ItemBuff(item.buffs[i].min, item.buffs[i].max);
-            buffs[i].attribute = item.buffs[i].attribute;
-        }
     }
 }
 
