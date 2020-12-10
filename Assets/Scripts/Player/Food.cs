@@ -34,7 +34,7 @@ public class Food : MonoBehaviour
     }
 
     private void DecreaseFood() {
-        RemoveFood(1);
+        RemoveFood(2);
     }
 
     public void AddFood(int food_value)
