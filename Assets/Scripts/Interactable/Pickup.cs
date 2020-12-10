@@ -7,9 +7,9 @@ using UnityEngine.InputSystem;
 public class Pickup : Interactable
 {
     //activated when player is in range and presses F
-    public override void Activate(InputAction.CallbackContext context)
+    public override void Activate()
     {
-        if (inInteractSphere && context.performed)
+        if (inInteractSphere)
         {
             //do the pickup action
             PickupAction();

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class InteractSphere : MonoBehaviour
 {
-
-
     public List<GameObject> interactableGameObjectsInRange = new List<GameObject>();
     private void OnTriggerEnter(Collider other)
     {

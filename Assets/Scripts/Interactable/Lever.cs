@@ -15,9 +15,9 @@ public class Lever : Interactable
         doorScript = door.GetComponent<Door>();
     }
 
-    public override void Activate(InputAction.CallbackContext context)
+    public override void Activate()
     {
-        if (inInteractSphere && context.performed)
+        if (inInteractSphere)
         {
             if (!doorScript.doorMoving)
             {
