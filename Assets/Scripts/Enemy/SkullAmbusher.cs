@@ -25,9 +25,11 @@ public class SkullAmbusher : Skull
         
     }
 
+    //go back to the spawn and set back down
     public override void LosePlayer()
     {
-        base.LosePlayer();
+        agent.SetDestination(spawnPosition);
+        agent.stoppingDistance = spawnStoppingDistance;
         animatorController.SetBool("playerDetected", false);
     }
 
