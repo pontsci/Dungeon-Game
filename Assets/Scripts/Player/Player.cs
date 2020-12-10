@@ -7,19 +7,24 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
-    public GameObject inventoryCanvas;
-    public List<GameObject> interactableGameObjectsInRange;
+    public GameObject inventoryCanvas; 
+    public List<GameObject> interactableGameObjectsInRange; //interactable objects in range of the player
     public InteractSphere interactSphereScript;
-    private FirstPersonController fpcScript;
+    private FirstPersonController fpcScript; //the fps controller script
+    private PlayerInput playerInput; //the PlayerInput component
+    private InputAction interactAction; //the interactAction
+    private InputAction meleeAttackAction; //the melleAttackAction
     private bool inventoryOpen = false;
 
     private void Start()
     {
         interactableGameObjectsInRange = interactSphereScript.interactableGameObjectsInRange;
         fpcScript = gameObject.GetComponent<FirstPersonController>();
+        playerInput = gameObject.GetComponent<PlayerInput>();
+        interactAction = playerInput.actions.FindAction("Interact");
+        meleeAttackAction = playerInput.actions.FindAction("Melee Attack");
         inventoryCanvas.GetComponent<Canvas>().enabled = false;
     }
-
 
     public void ActivateInteractableAtZeroIndex(InputAction.CallbackContext context)
     {
@@ -31,7 +36,7 @@ public class Player : MonoBehaviour
                 //activate our interactable object
                 //Debug.Log("Activate this " + interactableGameObjectsInRange[0] + "!");
                 var interactable = interactableGameObjectsInRange[0].gameObject.GetComponent<Interactable>();
-                interactable.Activate(context);
+                interactable.Activate();
             }
         }
     }
@@ -44,40 +49,35 @@ public class Player : MonoBehaviour
             //open the inventory (render it) and freeze the player
             inventoryOpen = !inventoryOpen;
             inventoryCanvas.GetComponent<Canvas>().enabled = true;
+
+            //disable the controller
             fpcScript.enabled = false;
+
+            //disable actions
+            interactAction.Disable();
+            meleeAttackAction.Disable();
+
+            //unlock cursor
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
         }
         else if(context.performed && inventoryOpen)
         {
-            //Time.timeScale = 1;
             //close the inventory (cull it) and unfreeze the player
             inventoryOpen = !inventoryOpen;
             inventoryCanvas.GetComponent<Canvas>().enabled = false;
+
+            //re-enable controller
             fpcScript.enabled = true;
+
+            //re-enable actions
+            interactAction.Enable();
+            meleeAttackAction.Enable();
+
+            //re-lock cursor
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-        }
-    }
-
-    // a test method for saving the inventory
-    public void SaveInventory(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Debug.Log("Saving!");
-            inventory.Save();
-        }
-    }
-
-    // a test method for loading the inventory
-    public void LoadInventory(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Debug.Log("Loading!");
-            inventory.Load();
         }
     }
 
@@ -93,6 +93,7 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        //this is just a mess, I need to clean it up. will do if have time.
         inventory.inventory.slots = new InventorySlot[24];
     }
 }

@@ -17,7 +17,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void Start()
     {
-        //the renderer
+        //initiialize the renderer and playerScript
         rend = gameObject.GetComponent<Renderer>();
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
@@ -59,6 +59,6 @@ public abstract class Interactable : MonoBehaviour
         rend.material = interactiveMaterial;
     }
 
-    //a method invoked by the unity input manager on "F" key
-    public abstract void Activate(InputAction.CallbackContext context);
+    //a method invoked by the player when the object is interacted with
+    public abstract void Activate();
 }

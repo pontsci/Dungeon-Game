@@ -19,7 +19,7 @@ public class DisplayInventory : MonoBehaviour
         CreateSlots();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame, this could be optimized as we don't need to update the inv every frame, but I have run out of time
     void Update()
     {
         UpdateSlots();
@@ -113,6 +113,7 @@ public class DisplayInventory : MonoBehaviour
     }
     public void OnDragEnd(GameObject obj)
     {
+        //if hovering something, swap their slots with the object being dragged and the mouse's hovered item, else delete it
         if (mouseItem.hoverObj)
         {
             inventory.SwapSlots(itemToSlotHash[obj], itemToSlotHash[mouseItem.hoverObj]);
