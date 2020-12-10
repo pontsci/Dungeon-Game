@@ -8,7 +8,6 @@ public class ScoreManager : MonoBehaviour
 {
     public int currentScore = 0;
     private Text scoreDisplay;
-    float elapsed = 0f;
 
     public AudioClip scoreAudio;
     private AudioSource soundSource;
@@ -24,7 +23,6 @@ public class ScoreManager : MonoBehaviour
 
     public void addScore(int value) {
         currentScore = currentScore + value;
-        //scoreDisplay = GameObject.FindGameObjectWithTag("ScoreNum").GetComponent<Text>();
         soundSource.PlayOneShot(scoreAudio, 1.0f);
         scoreDisplay.text = currentScore.ToString();
     }

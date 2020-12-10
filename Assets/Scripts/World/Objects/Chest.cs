@@ -8,7 +8,6 @@ public class Chest : MonoBehaviour
 
     void Start()
     {
-        //can comment this out and it should still work. If you do, make sure to uncomment the code in OnTriggerEnter.
         scoreManager = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>();
     }
 
@@ -16,7 +15,6 @@ public class Chest : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //scoreManager = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>();
             scoreManager.addScore(100);
             Destroy(gameObject);
         }
