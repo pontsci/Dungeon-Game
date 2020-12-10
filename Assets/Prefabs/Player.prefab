@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1200739072}
   - component: {fileID: 1200739074}
   - component: {fileID: 1200739073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SwordHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 2122975761036273410}
   - component: {fileID: 2122975761040222532}
   - component: {fileID: 5908949167209871813}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HEALTH: 100
+  deathMenu: {fileID: 0}
   poisonedColor: {r: 0, g: 0, b: 0, a: 0}
   healthyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2122975761033787650
@@ -184,8 +185,8 @@ GameObject:
   - component: {fileID: 1447705907041843485}
   - component: {fileID: 3472314773876500584}
   - component: {fileID: 1429646887}
-  m_Layer: 0
-  m_Name: UpdatedPlayer
+  m_Layer: 8
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HEALTH: 100
+  deathMenu: {fileID: 0}
   poisonedColor: {r: 0.20000002, g: 0.8313726, b: 0.1764706, a: 1}
   healthyColor: {r: 0.9058824, g: 0.21568629, b: 0.21568629, a: 1}
 --- !u!114 &3472314773876500584
@@ -610,7 +612,7 @@ GameObject:
   - component: {fileID: 8275412143534692504}
   - component: {fileID: 3692560878061059775}
   - component: {fileID: 8470376370150179077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InteractSphere
   m_TagString: InteractSphere
   m_Icon: {fileID: 0}
@@ -711,6 +713,10 @@ PrefabInstance:
     - target: {fileID: 2889348898065953343, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
       propertyPath: m_Name
       value: sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889348898065953343, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3062199497161228530, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
       propertyPath: m_IsTrigger
