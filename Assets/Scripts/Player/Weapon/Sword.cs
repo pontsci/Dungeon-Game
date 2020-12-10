@@ -8,6 +8,8 @@ public class Sword : MonoBehaviour
 
     private Animator swordAnimator;
 
+    public bool swinging = false;
+
     private void Start()
     {
         swordAnimator = gameObject.GetComponent<Animator>();
@@ -21,6 +23,7 @@ public class Sword : MonoBehaviour
             if (swordAnimator.GetBool("isSwinging") == false)
             {
                 swordAnimator.SetBool("isSwinging", true);
+                swinging = true;
                 swordAnimator.Play("SwordSwing");
             }
             else
@@ -28,5 +31,7 @@ public class Sword : MonoBehaviour
                 //Debug.Log("In middle of swing animation!!!");
             }
         }
+        else
+            swinging = false;
     }
 }
