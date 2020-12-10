@@ -17,7 +17,7 @@ public class DamagePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        canHitPlayer = vision.playerReached;
+        canHitPlayer = true;
     }
 
     private void OnTriggerEnter(Collider other)
