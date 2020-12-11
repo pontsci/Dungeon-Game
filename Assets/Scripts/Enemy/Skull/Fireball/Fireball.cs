@@ -5,11 +5,10 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     Transform target; //the target we want to fly towards
-    [SerializeField] float projectileSpeed = 5f;
     [SerializeField] float lifetime = 10f;
     [SerializeField] float particleDeathTime = 1f; //the time it takes for the particle system to die after a collision
     [SerializeField] int damage = 15;
-    [SerializeField] float thrust;
+    [SerializeField] float thrust = 120f;
 
     private ParticleSystem ps;
 

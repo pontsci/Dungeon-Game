@@ -7,13 +7,21 @@ public class Skull : MonoBehaviour
 {
 
     public Transform playerTransform; //player's position
+
     public float stoppingDistance = 5f; //the stopping distance
+
     protected float spawnStoppingDistance = 0.2f; //the stopping distance when returning to spawn
     protected Vector3 spawnPosition; //the spawn position
-    protected bool isAtSpawn = true; //are we at the spawn?
-    protected bool shooting = false;
-    protected NavMeshAgent agent; //our agent component
 
+    protected bool isAtSpawn = true; //are we at the spawn?
+    protected bool shooting = false; //whether we are shoting or not
+
+    protected EnemyHealth healthScript;
+
+    protected AudioSource audioSource;
+    [SerializeField] protected AudioClip onPlayerDetectedSound;
+
+    protected NavMeshAgent agent; //our agent component
 
     protected GameObject detectionSphere; //the detection sphere
     protected PlayerDetector playerDetector; //the player detector script
@@ -21,8 +29,8 @@ public class Skull : MonoBehaviour
     protected GameObject fireDetectionSphere;
     protected PlayerDetector firingDetector; //the player detection for firing
 
-    protected Transform fireballSpawnPoint;
-    [SerializeField] protected GameObject fireballPrefab;
+    protected Transform fireballSpawnPoint; //the spawn point of the fireball projectile
+    [SerializeField] protected GameObject fireballPrefab; //the prefab to use for the fireball projectile
 
 
     // Start is called before the first frame update
@@ -30,6 +38,9 @@ public class Skull : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = stoppingDistance;
+
+        healthScript = GetComponent<EnemyHealth>();
+        audioSource = GetComponent<AudioSource>();
 
         detectionSphere = transform.Find("DetectionSphere").gameObject;
         playerDetector = detectionSphere.GetComponent<PlayerDetector>();
@@ -80,6 +91,7 @@ public class Skull : MonoBehaviour
         agent.stoppingDistance = spawnStoppingDistance;
     }
 
+    //when we detect a player, set destinations
     public virtual void DetectPlayer()
     {
         agent.SetDestination(playerTransform.position);
@@ -87,17 +99,24 @@ public class Skull : MonoBehaviour
         isAtSpawn = false;
     }
 
+    //if we're in range, set shooting true
     public virtual void InRangeToShoot()
     {
         shooting = true;
-        Debug.Log("We are in range");
         InvokeRepeating("Shoot", 0.2f, 1f);
     }
 
+    //if we're out of shooting range, set shooting false
     public virtual void OutOfRangeToShoot()
     {
         shooting = false;
         CancelInvoke("Shoot");
+    }
+
+    //the enemy is dead, do dying stuff
+    public virtual void Die()
+    {
+        Destroy(gameObject);
     }
 
 }
