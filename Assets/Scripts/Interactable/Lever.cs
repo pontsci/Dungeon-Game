@@ -6,8 +6,12 @@ using UnityEngine.InputSystem;
 public class Lever : Interactable
 {
     public GameObject door;
+    [SerializeField] AudioClip leverDown;
+    [SerializeField] AudioClip leverUp;
     private Door doorScript;
     private Animator leverController;
+    private AudioSource audioSource;
+
 
 
     // Start is called before the first frame update
@@ -17,6 +21,7 @@ public class Lever : Interactable
         base.Start();
         doorScript = door.GetComponent<Door>();
         leverController = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Activate()
@@ -39,5 +44,15 @@ public class Lever : Interactable
             //toggle the lever pulled status
             leverController.SetBool("pulled", !leverController.GetBool("pulled"));
         }
+    }
+
+    public void PlayLeverDown()
+    {
+        audioSource.PlayOneShot(leverDown);
+    }
+
+    public void PlayLeverUp()
+    {
+        audioSource.PlayOneShot(leverUp);
     }
 }
