@@ -9,12 +9,9 @@ public class Pickup : Interactable
     //activated when player is in range and presses F
     public override void Activate()
     {
-        if (inInteractSphere)
-        {
-            //do the pickup action
-            PickupAction();
-            Destroy(gameObject);
-        }
+        //do the pickup action
+        PickupAction();
+        Destroy(gameObject);
     }
 
     //a generic pickup action, overrite in child
