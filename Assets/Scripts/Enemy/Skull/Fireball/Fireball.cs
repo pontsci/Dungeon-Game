@@ -9,6 +9,9 @@ public class Fireball : MonoBehaviour
     [SerializeField] float particleDeathTime = 1f; //the time it takes for the particle system to die after a collision
     [SerializeField] int damage = 15;
     [SerializeField] float thrust = 120f;
+    [SerializeField] AudioClip[] fireSounds;
+    [SerializeField] AudioClip[] fireHitSounds;
+    private AudioSource audioSource;
     private bool hasCollided = false;
 
     private ParticleSystem ps;
@@ -19,7 +22,7 @@ public class Fireball : MonoBehaviour
 
     public void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         ps = GetComponent<ParticleSystem>();
 
@@ -35,7 +38,9 @@ public class Fireball : MonoBehaviour
 
         //look at the target
         transform.rotation = Quaternion.LookRotation(new Vector3(relativePos.x, relativePos.y + 1, relativePos.z));
-        
+
+        int rand = Random.Range(0, fireSounds.Length - 1);
+        audioSource.PlayOneShot(fireSounds[rand]);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -49,6 +54,9 @@ public class Fireball : MonoBehaviour
             }
             hasCollided = true;
 
+            int rand = Random.Range(0, fireHitSounds.Length - 1);
+            audioSource.PlayOneShot(fireHitSounds[rand]);
+
             //detach the particle system so it dies naturally
             var ballParticles = transform.Find("Ball Particles").gameObject;
             //get it take away its parent so it is not deleted with it
@@ -59,7 +67,7 @@ public class Fireball : MonoBehaviour
             Destroy(ballParticles, particleDeathTime);
 
             //destroy the rest now
-            Destroy(gameObject, .2f);
+            Destroy(gameObject, 1f);
         }
     }
 
