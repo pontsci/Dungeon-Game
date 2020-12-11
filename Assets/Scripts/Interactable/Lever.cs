@@ -18,22 +18,19 @@ public class Lever : Interactable
 
     public override void Activate()
     {
-        //if we're in the interact sphere, activate the lever!
-        if (inInteractSphere)
+        //activate the lever!
+        if (!doorScript.doorMoving)
         {
-            if (!doorScript.doorMoving)
+            doorScript.doorMoving = true;
+            if (doorScript.doorClosed)
             {
-                doorScript.doorMoving = true;
-                if (doorScript.doorClosed)
-                {
-                    //Debug.Log("Lever says: Open the door!");
-                    doorScript.OpenDoor();
-                }
-                else
-                {
-                    //Debug.Log("Lever says: Close the door!");
-                    doorScript.CloseDoor();
-                }
+                //Debug.Log("Lever says: Open the door!");
+                doorScript.OpenDoor();
+            }
+            else
+            {
+                //Debug.Log("Lever says: Close the door!");
+                doorScript.CloseDoor();
             }
         }
     }
