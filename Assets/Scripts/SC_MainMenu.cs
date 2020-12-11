@@ -8,6 +8,7 @@ public class SC_MainMenu : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject CreditsMenu;
+    public GameObject ControlsMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,14 @@ public class SC_MainMenu : MonoBehaviour
         // Show Credits Menu
         MainMenu.SetActive(false);
         CreditsMenu.SetActive(true);
+        ControlsMenu.SetActive(false);
+    }
+
+    public void ControlsButton()
+    {
+        MainMenu.SetActive(false);
+        CreditsMenu.SetActive(false);
+        ControlsMenu.SetActive(true);
     }
 
     public void MainMenuButton()
@@ -33,6 +42,7 @@ public class SC_MainMenu : MonoBehaviour
         // Show Main Menu
         MainMenu.SetActive(true);
         CreditsMenu.SetActive(false);
+        ControlsMenu.SetActive(false);
     }
 
     public void QuitButton()
