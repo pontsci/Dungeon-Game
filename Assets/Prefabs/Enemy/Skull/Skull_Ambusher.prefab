@@ -14603,7 +14603,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 12
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1597702322
 MonoBehaviour:
@@ -14617,7 +14617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ce99dafa7288f42beecfc63733efb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 12
+  detectionRadius: 8
   lostDetection:
     m_PersistentCalls:
       m_Calls:
@@ -14648,8 +14648,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  expandDetection: 0
-  expansionAmount: 5
+  expandDetection: 1
+  expansionAmount: 4
 --- !u!1 &1962055156
 GameObject:
   m_ObjectHideFlags: 0
@@ -15104,7 +15104,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 12
   m_Center: {x: 0.000000014901161, y: 0.17963135, z: -0.044539288}
 --- !u!114 &7658859209037834145
 MonoBehaviour:
@@ -15118,7 +15118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ce99dafa7288f42beecfc63733efb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 15
+  detectionRadius: 12
   lostDetection:
     m_PersistentCalls:
       m_Calls:
@@ -15150,7 +15150,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   expandDetection: 1
-  expansionAmount: 5
+  expansionAmount: 8
 --- !u!1 &7658993895556375584
 GameObject:
   m_ObjectHideFlags: 0

@@ -1031,6 +1031,10 @@ PrefabInstance:
       propertyPath: swordImpactEnemyClips.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: abb249c750f264194a12e05d7ba466ee, type: 3}
+    - target: {fileID: 8439886811340104870, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3062199497161228530, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
     - {fileID: 8325293613714151996, guid: 872609b6d8a2b16409ea18e4e82bf176, type: 3}
