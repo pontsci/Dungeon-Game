@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5e532e840cd57314eac1eb0d9dc43d58
   - enabled: 1
-    path: Assets/Scenes/DevScene_01.unity
+    path: Assets/Scenes/DevScene_Mason.unity
     guid: e429624e621eae147ac6b550aeb4495d
   - enabled: 1
     path: Assets/Scenes/DevScene_Emeara.unity
