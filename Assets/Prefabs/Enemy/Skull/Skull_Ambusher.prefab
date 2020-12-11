@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 866742343}
   - component: {fileID: 866742345}
   - component: {fileID: 866742344}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: RightGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 926006442}
   - component: {fileID: 926006444}
   - component: {fileID: 926006443}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Flight Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9667,7 +9667,7 @@ GameObject:
   - component: {fileID: 1150515888}
   - component: {fileID: 1150515890}
   - component: {fileID: 1150515889}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: LeftGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
