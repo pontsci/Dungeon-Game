@@ -367,6 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180346361}
   - component: {fileID: 180346362}
+  - component: {fileID: 180346363}
   m_Layer: 0
   m_Name: LeverStickPivot
   m_TagString: Untagged
@@ -408,6 +409,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &180346363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180346360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f3b64af5570e842b2741cf0bed50f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  door: {fileID: 0}
 --- !u!1001 &186534912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3599,6 +3615,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5778228268283244868, guid: af68e90a7c3cbcd49820f07ea529136e, type: 3}
   m_PrefabInstance: {fileID: 1504218092}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1760224884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1789646300229838, guid: 1355992e2e0414a50ba4b0543adead7b, type: 3}
+  m_PrefabInstance: {fileID: 1959743417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1760224885
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760224884}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07d3533d9d794d7408ed5762f0445226, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1760224886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760224884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffea319fe6872ec4080b2507e41ee751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1773158874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1164426867444687161, guid: 71af09728f910014f837bc899b83a230, type: 3}
@@ -4091,14 +4143,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7658859208926873896, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
-      propertyPath: m_Height
-      value: 0.729
-      objectReference: {fileID: 0}
-    - target: {fileID: 7658859208926873896, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
-      propertyPath: m_Radius
-      value: 0.18
-      objectReference: {fileID: 0}
     - target: {fileID: 7658859208926873897, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
       propertyPath: playerTransform
       value: 
