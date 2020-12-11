@@ -23,5 +23,9 @@ public class Stake : MonoBehaviour
             playerHealthScript.RemoveHealth(stakeData.removeHealthValue);
             soundSource.PlayOneShot(scoreAudio, 1.0f);
         }
+        else if (other.tag == "EnemyTrapHitBox") {
+            other.gameObject.GetComponentInParent<Skeleton>().damage(stakeData.removeHealthValue);
+            soundSource.PlayOneShot(scoreAudio, 1.0f);
+        }
     }
 }

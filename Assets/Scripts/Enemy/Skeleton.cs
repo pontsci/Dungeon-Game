@@ -29,7 +29,7 @@ public class Skeleton : MonoBehaviour
     {
         audioSource.PlayOneShot(swing, .7F);
         health -= takeDamage;
-        print(health);
+        //print(health);
         isDead();
     }
 

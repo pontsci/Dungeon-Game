@@ -30,7 +30,7 @@ public class DamagePlayer : MonoBehaviour
             playerHealthScript = other.gameObject.GetComponent<Health>();
             if (canHitPlayer)
             {
-                Debug.Log("We collided with : " + other.gameObject.GetComponent<Health>());
+                //Debug.Log("We collided with : " + other.gameObject.GetComponent<Health>());
                 playerHealthScript.RemoveHealth(enemySwordData.removeHealthValue);
             }
             //Destroy(gameObject);
