@@ -6,7 +6,7 @@ public class SkullHitBox : MonoBehaviour
 {
     public GameObject skullEnemy;
     
-    public float damageCooldown = .2f;
+    public float damageCooldown = .4f;
     private bool hitRecently = false;
     private EnemyHealth skullHealthScript;
 
@@ -25,7 +25,7 @@ public class SkullHitBox : MonoBehaviour
                 {
                     skullHealthScript.RemoveHealth(other.gameObject.GetComponent<Sword>().damage);
                     hitRecently = true;
-                    Invoke("HitRecentlyToggle", .2f);
+                    Invoke("HitRecentlyToggle", damageCooldown);
                 }
             }
         }
