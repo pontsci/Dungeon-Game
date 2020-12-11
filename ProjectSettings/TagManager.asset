@@ -16,6 +16,8 @@ TagManager:
   - ScoreNum
   - EnemySword
   - DeathScore
+  - Fireball
+  - FireballSpawn
   layers:
   - Default
   - TransparentFX
