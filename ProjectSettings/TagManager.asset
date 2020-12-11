@@ -16,6 +16,9 @@ TagManager:
   - ScoreNum
   - EnemySword
   - DeathScore
+  - Fireball
+  - FireballSpawn
+  - SkullEnemy
   - EnemyTrapHitBox
   layers:
   - Default
@@ -26,8 +29,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
