@@ -35,7 +35,7 @@ public class InventoryClickHandler : ClickHandler, IPointerClickHandler
                     else
                     {
                         Text text = obj.GetComponentInChildren<Text>();
-                        text.text = "Undefined";
+                        text.text = "Drink";
                     }
                 }
             }

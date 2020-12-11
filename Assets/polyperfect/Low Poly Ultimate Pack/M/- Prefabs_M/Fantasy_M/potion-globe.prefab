@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33384849378119528}
   - component: {fileID: 23082211046574122}
   - component: {fileID: 64336462436164678}
+  - component: {fileID: 6664657114762150138}
   m_Layer: 0
   m_Name: potion-globe
   m_TagString: Untagged
@@ -98,3 +99,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5a3546cb4dd9946b0a1f074b8ab62f0d, type: 3}
+--- !u!114 &6664657114762150138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500388732386792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6fcb46b9732114d96e37bca96de0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  item: {fileID: 11400000, guid: 9919cea2d3995f6469b4f750b261ca4c, type: 2}

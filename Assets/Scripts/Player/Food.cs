@@ -28,13 +28,13 @@ public class Food : MonoBehaviour
             if (elapsed >= 5f)
             {
                 elapsed = elapsed % 5f;
-                playerHealthScript.RemoveHealth(1);
+                playerHealthScript.RemoveHealth(4);
             }
         }
     }
 
     private void DecreaseFood() {
-        RemoveFood(2);
+        RemoveFood(4);
     }
 
     public void AddFood(int food_value)

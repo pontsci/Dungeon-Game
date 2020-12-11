@@ -19,6 +19,7 @@ TagManager:
   - Fireball
   - FireballSpawn
   - SkullEnemy
+  - EnemyTrapHitBox
   layers:
   - Default
   - TransparentFX

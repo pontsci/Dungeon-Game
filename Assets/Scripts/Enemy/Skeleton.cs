@@ -27,12 +27,9 @@ public class Skeleton : MonoBehaviour
 
     public void damage(int takeDamage)
     {
-        if (vision.playerReached)
-        {
-            audioSource.PlayOneShot(swing, .7F);
-        }
+        audioSource.PlayOneShot(swing, .7F);
         health -= takeDamage;
-        print(health);
+        //print(health);
         isDead();
     }
 
