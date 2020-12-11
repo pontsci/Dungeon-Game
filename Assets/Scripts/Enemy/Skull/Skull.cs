@@ -11,17 +11,34 @@ public class Skull : MonoBehaviour
     protected float spawnStoppingDistance = 0.2f; //the stopping distance when returning to spawn
     protected Vector3 spawnPosition; //the spawn position
     protected bool isAtSpawn = true; //are we at the spawn?
+    protected bool shooting = false;
     protected NavMeshAgent agent; //our agent component
+
+
+    protected GameObject detectionSphere; //the detection sphere
     protected PlayerDetector playerDetector; //the player detector script
+
+    protected GameObject fireDetectionSphere;
+    protected PlayerDetector firingDetector; //the player detection for firing
+
+    protected Transform fireballSpawnPoint;
     [SerializeField] protected GameObject fireballPrefab;
+
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = stoppingDistance;
-        playerDetector = GetComponentInChildren<PlayerDetector>();
+
+        detectionSphere = transform.Find("DetectionSphere").gameObject;
+        playerDetector = detectionSphere.GetComponent<PlayerDetector>();
+
+        fireDetectionSphere = transform.Find("FireSphere").gameObject;
+        firingDetector = fireDetectionSphere.GetComponent<PlayerDetector>();
+
         spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        fireballSpawnPoint = transform.Find("FireballSpawn").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -53,7 +70,7 @@ public class Skull : MonoBehaviour
     //spawn a fireball
     protected void Shoot()
     {
-
+        Instantiate(fireballPrefab, fireballSpawnPoint.position, fireballSpawnPoint.rotation);
     }
 
     //lose the player, invoked by playerDetector immediately when losing the player
@@ -68,6 +85,19 @@ public class Skull : MonoBehaviour
         agent.SetDestination(playerTransform.position);
         agent.stoppingDistance = stoppingDistance;
         isAtSpawn = false;
+    }
+
+    public virtual void InRangeToShoot()
+    {
+        shooting = true;
+        Debug.Log("We are in range");
+        InvokeRepeating("Shoot", 0.2f, 1f);
+    }
+
+    public virtual void OutOfRangeToShoot()
+    {
+        shooting = false;
+        CancelInvoke("Shoot");
     }
 
 }

@@ -21,20 +21,23 @@ public class PlayerDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        Debug.Log("The collider: " + other);
+        Debug.Log("The collider's tag: " + other.tag);
+        if(other.CompareTag("Player"))
         {
             playerDetected = true;
             if (expandDetection)
             {
                 detectionSphere.radius += expansionAmount;
             }
+            Debug.Log("In Range In Player Detector Script");
             gainedDetection.Invoke();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
             playerDetected = false;
             if (expandDetection)
