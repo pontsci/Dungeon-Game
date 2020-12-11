@@ -19,7 +19,10 @@ public class Skull : MonoBehaviour
     protected EnemyHealth healthScript;
 
     protected AudioSource audioSource;
-    [SerializeField] protected AudioClip onPlayerDetectedSound;
+    [SerializeField] protected AudioClip[] onPlayerDetectedSound;
+    protected bool playedSoundRecently = false;
+    [SerializeField] protected AudioClip[] idleSounds;
+    [SerializeField] protected float timeBetweenSounds = 5f;
 
     protected NavMeshAgent agent; //our agent component
 
@@ -61,6 +64,13 @@ public class Skull : MonoBehaviour
             {
                 FaceTarget();
             }
+            if (!playedSoundRecently)
+            {
+                playedSoundRecently = true;
+                Invoke("TogglePlayedSoundRecently", timeBetweenSounds);
+                int rand = Random.Range(0, idleSounds.Length - 1);
+                audioSource.PlayOneShot(idleSounds[rand]);
+            }
         }
         else
         {
@@ -96,7 +106,19 @@ public class Skull : MonoBehaviour
     {
         agent.SetDestination(playerTransform.position);
         agent.stoppingDistance = stoppingDistance;
+        PlayAmbushSound();
         isAtSpawn = false;
+    }
+
+    protected virtual void PlayAmbushSound()
+    {
+        int rand = Random.Range(0, onPlayerDetectedSound.Length - 1);
+        audioSource.PlayOneShot(onPlayerDetectedSound[rand]);
+    }
+
+    protected void TogglePlayedSoundRecently()
+    {
+        playedSoundRecently = !playedSoundRecently;
     }
 
     //if we're in range, set shooting true

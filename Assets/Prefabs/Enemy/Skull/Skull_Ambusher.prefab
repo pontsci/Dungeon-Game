@@ -14784,7 +14784,6 @@ GameObject:
   - component: {fileID: 7658859208926873897}
   - component: {fileID: 442665027937665792}
   - component: {fileID: 1613018530}
-  - component: {fileID: 7963108036275293334}
   m_Layer: 0
   m_Name: Skull_Ambusher
   m_TagString: SkullEnemy
@@ -14846,7 +14845,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   stoppingDistance: 5
-  onPlayerDetectedSound: {fileID: 0}
+  onPlayerDetectedSound:
+  - {fileID: 8300000, guid: 608bdcc34caf48e4089106f86c5031b5, type: 3}
+  - {fileID: 8300000, guid: 6b694c5c8949768459bdbc22f9a21229, type: 3}
+  - {fileID: 8300000, guid: 88fe437cad398874e889d3fcc1878275, type: 3}
+  - {fileID: 8300000, guid: c076d163e93c1e74f9ffa0143d2f546b, type: 3}
+  - {fileID: 8300000, guid: 75ebbc1aeada770439e79e16568bb495, type: 3}
+  idleSounds:
+  - {fileID: 8300000, guid: 3e554787615ab5640a7941c2b59e64c4, type: 3}
+  - {fileID: 8300000, guid: a4cd7cf9ae46ed5468f43502f9a8800b, type: 3}
+  - {fileID: 8300000, guid: c94e08efdc8c8c14dbb14fa8f6b235bc, type: 3}
+  - {fileID: 8300000, guid: 4df16611c4b97ef4bbb455e75c6e9614, type: 3}
+  - {fileID: 8300000, guid: 1b9fe7c78bb85764e90310dc14c1968c, type: 3}
+  timeBetweenSounds: 5
   fireballPrefab: {fileID: 7092605579194012285, guid: af27b088bab77e54c91b98e84146e59a, type: 3}
   particleSystemOn:
     m_PersistentCalls:
@@ -14955,102 +14966,6 @@ MonoBehaviour:
         m_CallState: 2
   health: 100
 --- !u!82 &1613018530
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7658859208926873910}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!82 &7963108036275293334
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
