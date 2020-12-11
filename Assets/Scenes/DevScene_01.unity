@@ -3260,6 +3260,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1882125671, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882125675, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1447705907041843485, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
       propertyPath: deathMenu
       value: 
@@ -3368,7 +3376,8 @@ PrefabInstance:
       propertyPath: swordImpactClips.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 5adac6f5284aa4a4e8231a9efb04457d, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1882125675, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fc9878b5d7e4ca448a71a61428383dd3, type: 3}
 --- !u!4 &1815088293 stripped
 Transform:
@@ -3827,6 +3836,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 866742342, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 926006441, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113046756, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113046756, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150515887, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230845135, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962055156, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962055156, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036928431, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_TagString
+      value: SkullEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078973941, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.412
+      objectReference: {fileID: 0}
     - target: {fileID: 7658859208926873897, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
       propertyPath: playerTransform
       value: 
@@ -3879,5 +3928,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skull_Ambusher
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1218047249, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6057533e909bb3c46a58df75ebe2d94c, type: 3}

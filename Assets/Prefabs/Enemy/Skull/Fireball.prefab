@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31311b703710fe4fbbaeebaea677d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 5
   lifetime: 10
+  particleDeathTime: 1
   damage: 15
   thrust: 120
 --- !u!54 &2940890831543499519
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 7092605579804334703}
   - component: {fileID: 7092605579804334700}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: Ball Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

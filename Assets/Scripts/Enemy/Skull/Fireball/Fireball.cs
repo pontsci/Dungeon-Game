@@ -9,6 +9,7 @@ public class Fireball : MonoBehaviour
     [SerializeField] float particleDeathTime = 1f; //the time it takes for the particle system to die after a collision
     [SerializeField] int damage = 15;
     [SerializeField] float thrust = 120f;
+    private bool hasCollided = false;
 
     private ParticleSystem ps;
 
@@ -39,23 +40,27 @@ public class Fireball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!hasCollided)
         {
-            //hit!
-            collision.gameObject.GetComponent<Health>().RemoveHealth(damage);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                //hit!
+                collision.gameObject.GetComponent<Health>().RemoveHealth(damage);
+            }
+            hasCollided = true;
+
+            //detach the particle system so it dies naturally
+            var ballParticles = transform.Find("Ball Particles").gameObject;
+            //get it take away its parent so it is not deleted with it
+            ballParticles.transform.parent = null;
+            //stop its particles
+            ballParticles.GetComponent<ParticleSystem>().Stop();
+            //destroy it later
+            Destroy(ballParticles, particleDeathTime);
+
+            //destroy the rest now
+            Destroy(gameObject, .2f);
         }
-
-        //detach the particle system so it dies naturally
-        GameObject ballParticles = transform.Find("Ball").gameObject;
-        //get it take away its parent so it is not deleted with it
-        ballParticles.transform.parent = null;
-        //stop its particles
-        ballParticles.GetComponent<ParticleSystem>().Stop();
-        //destroy it later
-        Destroy(ballParticles, particleDeathTime);
-
-        //destroy the rest now
-        Destroy(gameObject);
     }
 
     public void SetTarget(Transform target)

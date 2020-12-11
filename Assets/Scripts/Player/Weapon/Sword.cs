@@ -32,8 +32,7 @@ public class Sword : MonoBehaviour
                 swordAnimator.SetBool("isSwinging", true);
                 swinging = true;
                 swordAnimator.Play("SwordSwing");
-                int rand = Random.Range(0, swordSwingClips.Length - 1);
-                audioSource.PlayOneShot(swordSwingClips[rand]);
+                
             }
             else
             {
@@ -44,15 +43,23 @@ public class Sword : MonoBehaviour
             swinging = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void PlaySwordSwing()
+    {
+        int rand = Random.Range(0, swordSwingClips.Length - 1);
+        
+        audioSource.PlayOneShot(swordSwingClips[rand]);
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         //if it hasn't played sound recently, play sound, only if we're swinging (to prevent collisions from triggering it without swinging
-        if (!playedSoundRecently && swinging)
+        if (!playedSoundRecently && swordAnimator.GetBool("isSwinging"))
         {
-            Invoke("TogglePlayedSoundRecently", .4f);
+            Invoke("TogglePlayedSoundRecently", .3f);
             playedSoundRecently = true;
 
-            if (collision.gameObject.CompareTag("SkullEnemy") || collision.gameObject.CompareTag("Skeleton"))
+            if (other.CompareTag("SkullEnemy") || other.CompareTag("Skeleton"))
             {
                 int rand = Random.Range(0, swordImpactEnemyClips.Length - 1);
                 audioSource.PlayOneShot(swordImpactEnemyClips[rand]);
