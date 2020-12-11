@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6929826739132133227}
   - component: {fileID: 6929826739132133224}
+  - component: {fileID: 801520772869302818}
+  - component: {fileID: 6394474004495322465}
   m_Layer: 0
   m_Name: LeverStickPivot
   m_TagString: Untagged
@@ -51,6 +53,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &801520772869302818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929826739132133226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &6394474004495322465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929826739132133226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f3b64af5570e842b2741cf0bed50f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  door: {fileID: 6929826739737179252}
 --- !u!1 &6929826739737179252
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +188,6 @@ GameObject:
   - component: {fileID: 6929826740166980882}
   - component: {fileID: 6929826740166980881}
   - component: {fileID: 6929826740166980880}
-  - component: {fileID: 6929826740166980883}
-  - component: {fileID: 6054936586917895835}
   m_Layer: 0
   m_Name: LeverStick
   m_TagString: Untagged
@@ -230,34 +258,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6929826740166980883
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6929826740166981101}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6054936586917895835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6929826740166981101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f3b64af5570e842b2741cf0bed50f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactiveMaterial: {fileID: 0}
-  defaultMaterial: {fileID: 0}
-  door: {fileID: 6929826739737179252}
 --- !u!1 &6929826740185157188
 GameObject:
   m_ObjectHideFlags: 0
