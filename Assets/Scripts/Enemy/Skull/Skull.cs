@@ -6,13 +6,14 @@ using UnityEngine.AI;
 public class Skull : MonoBehaviour
 {
 
-    public Transform playerTransform;
-    public float stoppingDistance = 5f;
-    protected float spawnStoppingDistance = 0.2f;
-    protected Vector3 spawnPosition;
-    protected bool isAtSpawn = true;
-    protected NavMeshAgent agent;
-    protected PlayerDetector playerDetector;
+    public Transform playerTransform; //player's position
+    public float stoppingDistance = 5f; //the stopping distance
+    protected float spawnStoppingDistance = 0.2f; //the stopping distance when returning to spawn
+    protected Vector3 spawnPosition; //the spawn position
+    protected bool isAtSpawn = true; //are we at the spawn?
+    protected NavMeshAgent agent; //our agent component
+    protected PlayerDetector playerDetector; //the player detector script
+    [SerializeField] protected GameObject fireballPrefab;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -47,6 +48,12 @@ public class Skull : MonoBehaviour
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    //spawn a fireball
+    protected void Shoot()
+    {
+
     }
 
     //lose the player, invoked by playerDetector immediately when losing the player
